@@ -1,6 +1,9 @@
 > Levinux is a tiny Linux server based on QEMU that doesn't require an install
 > or admin rights on the host PC. Great for learning and appliance projects.
 
+<p align="center"><iframe src="http://www.youtube.com/embed/p7xf85wgVKo"
+frameborder="0" width="560" height="315"></iframe></p>
+
 # Beginning of Journal
 --------------------------------------------------------------------------------
 ## Mon Apr  7 13:54:15 EDT 2014
