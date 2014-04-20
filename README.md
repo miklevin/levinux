@@ -1,102 +1,337 @@
-> Levinux is a tiny Linux server based on QEMU that doesn't require an install
-> or admin rights on the host PC. Great for learning and appliance projects.
-
-https://www.youtube.com/watch?v=p7xf85wgVKo
-
-# Beginning of Journal
 --------------------------------------------------------------------------------
-## Fri Apr 11 10:35:47 EDT 2014
+                    _                 _
+                   | |     _____   __(_)_ __  _   ___  __
+                   | |    / _ \ \ / /| | '_ \| | | \ \/ /
+                   | |___|  __/\ V / | | | | | |_| |>  <
+                   |_____|\___| \_/  |_|_| |_|\__,_/_/\_\
 
-Latest status:
-
-I was asked on the forum: > What are the chances that the TCL kernel and
-Extensions can be updated while the search is on for help with QEMU compiling?
-
-...to which I repled:
-
-My plans is to update everything from latest sources: Linux kernel, version of
-Tiny Core Linux, and qemu binaries. The challenge of Levinux is that it is a
-difficult to reproduce magic cocktail, and that the old versions have many
-fewer dependencies and run very well. Moving to the new stuff always topples
-the house of cards. Error messages get generated and the recipe build-times
-become many times longer.
-
-To solve this, I am very inspired by the Aboriginal Linux project by Rob
-Landley http://landley.net/aboriginal/. My idea is to make Levinux self-build
-all its components, so it can effectively freshen itself up. I will create the
-cross-compiling environment to make the Mac, Windows and Linux qemu binaries
-INSIDE Levinux (yes, compiles will take forever), but it will also gather all
-the other latest components from source, such as Tiny Core Linux version 5,
-with it’s new Linux kernel (the vmlinuz file) included.
-
-I’ll probably switch everything over to Python 3. The trick is to do this while
-preserving everything special about Levinux. The deflated distro is still under
-20 megs, and it only inflates to about 60. This updating may make the resulting
-size over 100 MB, mostly due to dependency-bloat of the latest QEMU’s and bloat
-from Python 2.x to Python 3.x.
-
-Anyway I’m pretty determined to do it, and the real motivation is how cool and
-interesting it’s going to be to make Levinux self-freshening. My plan is to
-make a hidden menu option: Rebuild Levinux for Mac, Windows, Linux. When you
-make your choice, a process starts that could take 12 hours, but when it’s done
-you will be able to surf to a localhost-accessible website and grab the new zip
-file and copy it off the guest onto the host, and see if its any better.
-Because it’s all scripted, I will be able to perpetually refine it and keep
-Levinux modern.
-
-I’ll probably also be able to offer different spins on Levinux with
-optimizations for different host platforms, and versions that feature different
-Linux than Tiny Core, and different languages than Python.
-
-ETA: Who knows? I’ll do my best.
+                              Beta Version 2.3
+             Portable Linux Server and Programming Environment
 
 --------------------------------------------------------------------------------
-## Thu Apr 10 17:26:26 EDT 2014
 
-It occurs to me that in the same spirit as Aboriginal Linux, a goal of Levinux
-should be its ability to build its own hosting environment. This would solve
-the "good qemu binary" challenge, because it would simply be a Levinux recipe
-that builds an entirely new up-to-date QEMU binary that Levinux could run on. I
-could even use it to gather up the dependencies into the correct locations, and
-spin out support for a number of additional host environments. Testing will
-still be a unique challenge, in having to have hosts to test on when virtual
-machines don't cut it (like testing on various non-virtualize-able versions of
-OS X). But as far as doing the build, it will all be a hidden or maybe
-third-level menus (the initial boot and post-Python-build being the first two
-menus). 
+##Contents
+* About Levinux
+* Installing Levinux
+    * Mac OSX
+    * Windows
+    * Linux
+    * Tested Systems
+* Beginning Levinux
+    * Booting Levinux
+    * Connecting to Levinux
+    * The Next Step
+* File Manifest
+* Bugs
+* Road Map
+* Dependencies
+    * Linux
+    * Mac OSX 
+* Contributions
+* Change-log 
 
-What would that look like? Hmmm. Maybe something like sticking with the
-as-small-as-possible no-recipes-run yet ~20MB distribution file, but after
-initial boot, you are presented with some very different paths, one of them
-being "Build new QEMU binaries and support files" which when selected will make
-a SECOND instance of Levinux right on the host!!! It could magically appear
-next to the current instance. Wow! Can TFTP transmit files BACK UP?
+##About Levinux
+Levinux is a tiny virtual Linux server that runs without installation from USB
+or Dropbox on Mac, Windows, or Linux. This makes Levinux an ideal learning
+environment and a great way to run and keep your code safe for life. Levinux is
+and introduction to "short stack" development which becomes more and more
+relevant as Linux becomes more ubiquitous. Levinux is a remix of Tiny Core
+Linux and QEMU. Tiny Core Linux is an extremely small Linux based on how
+"embedded systems" work, and QEMU is a PC emulator that runs on many platforms.
 
---------------------------------------------------------------------------------
-## Mon Apr  7 13:54:15 EDT 2014
 
-Hello world! It's time to move Levinux into github and put it somewhere where a
-bunch of eyes can start examining it. Levinux has a little ways to go to come
-out of beta. The place that currently contains most of the documentation is on
-my personal site: http://mikelev.in/ux/
+##Installing Levinux
+###Mac OSX
+For Mac OSX users, extract the ".zip" file to any folder on your computer, and
+run the application labelled "Levinux on Mac". This will boot Levinux and start
+to download the necessary software packages for Levinux to properly function,
+such as git and Python. To download these packages, you will need a less-
+restrictive firewall than most, otherwise Levinux will not be able to connect
+to the software repositories.
 
-I need better ncurses-supporting QEMU binaries with all optional hardware
-support turned off, compiled for Windows, Mac and Linux. I also need to keep
-track of and make available all the source that was used for GPL compliance.
+###Windows
+For Windows users, extract the ".zip" file and run the VBScript script file
+"Levinux on Windows.vbs". This will boot Levinux and start downloading the
+software packages, such as Python and git, for Levinux. Note that like the
+instructions for Mac OSX, you will need a less-restrictive firewall, otherwise
+the downloads will fail.
 
-This project has been going on for years, and is based on the amazing fact that
-QEMU is one of the only virtual server products out there that can work without
-an install on the host machine, and as a free and open source project, it can
-run on Mac, Windows or other Linux machines. 
+###Linux
+Extract the ".zip" file and run the script "Levinux on Linux.sh". This will
+connect to the software repositories and start downloading the necessary
+packages for Levinux to function properly. On some systems, however, the script
+will fail to run, or open in a text editor. To solve this problem, change the
+permissions on the script to executable, and then try running the script.
+Unfortunately, since there are so many different distributions of Linux, this
+readme cannot provide specific instructions for all of them.
 
-Few people realize how powerful it can be under those conditions to make the
-same hard drive file in common with different QEMU binaries for each host
-platform. You effectively get a floating virtual machine that carries the same
-state (dev environment or whatever), no matter what x86 host machine you sit
-down with.
+###Tested Systems
+* Mac OS X 10.8.5 64-bit
+* Windows 7 Enterprise 64-bit SP1
+* Windows XP Professional 32-bit SP3
+* Ubuntu 13.04 32-bit
+* Ubuntu 13.04 64-bit
+* OpenSUSE 64-bit
 
-This approach works particularly well with Dropbox, because of how the system
-is broken up over several virtual hard drives, minimizing the amount of network
-activity required to keep all instances of your system synchronized. It may be
-the ultimate portable code execution environment to teach you generic
-Linux/Unix and to ensure your code is with you for the rest of your life.
+##Beginning Levinux
+###Booting Levinux 
+After downloading, extracting and running the OS-specific script, Levinux will
+start to boot. Levinux is based on Tiny Core Linux, so the boot order and
+options are similar. For more documentation, go to the Tiny Core Linux site. At
+this point, Levinux will also load the additional software extensions like
+Python and git. This may take some time depending on the system. After this has
+finished, a 'splash screen' is presented with 4 options which you can select.
+
+1. Learn More - To Learn more about this Levinux virtual computer
+2. Exit to Login - Exits 'splash screen' to a normal Linux command line login
+3. Shut Down - Safely shuts down Levinux. Use this to shut down Levinux instead of closing the window.
+4. Get Python - Gets Python, vim and git from repositories
+
+###Connecting To Levinux
+Unlike many other Linux distributions, Levinux requires you to connect with it
+through a SSH, which is the secure way to get the type-in user interface to
+servers.
+
+On Mac or Linux, open up a terminal and type in "ssh tc@localhost -p 2222" and
+when prompted for the password enter "foo". This will connect you to the
+account tc at the Levinux computer located on this computer (therefore
+"localhost") at port 2222. For Windows users, you will need to download another
+application to use Levinux. The most reliable is PuTTY. In PuTTY enter
+"localhost" into the "Host Name (or IP address)" field, and replace "22" with
+"2222" in the "Port" field.Then click "Open" to open the connection. PuTTY will
+now connect you to Levinux in a new window. Enter your username "tc" and
+password "foo" when prompted.Type "exit" to end the connection. You will now be
+connected to Levinux with a Linux prompt.
+
+###The Next Step
+To proceed to the next step, you will need to access the provided
+documentation. This is hosted by Levinux. To access it once Levinux is booted,
+you can type "localhost:8080" into any browser to load the documentation
+about how to use Levinux and how to get started programming with it.
+
+##File Manifest
+```
+- Levinux
+    - README.txt
+    - Levinux on Windows.vbs 
+    - Levinux on Linux.sh 
+    - Levinux on Mac.app 
+        -Contents
+            -MacOS
+                -macbios
+                    -bios.bin
+                    -vgabios-cirrus.bin
+                 -bios.bin
+                 -common
+                 -efi-e1000.rom
+                 -en-us
+                 -fmod.dll
+                 -home.qcow
+                 -home-fresh.qcow
+                 -i386-softmmu
+                 -kvmvapic.bin
+                 -libglib-2.0.0.dylib
+		 -libgmp.10.dylib
+		 -libgnutls.28.dylib
+		 -libgthread-2.0.0.dylib
+		 -libhogweed.2.3.dylib
+		 -libintl.8.dylib
+		 -libjpeg.8.dylib
+		 -libnettle.4.5.dylib
+		 -libp11-kit.0.dylib
+		 -libpixman-1.0.dylib
+		 -libtasn1.6.dylib
+                 -LICENSE
+                 -linuxboot.bin
+                 -microcore.gz
+                 -opt.qcow
+                 -opt-fresh.qcow
+                 -pxe-e1000.bin
+                 -pxe-rtl8139.bin
+                 -pxe-rtl8139.rom
+                 -qemu.exe
+                 -qemu-system-i386
+                 -qemu-system-x86_64
+                 -RunOnMac.sh
+                 -RunOnWindows.bat
+                 -SDL.dll
+                 -stderr.txt
+                 -stdout.txt
+                 -tce.qcow
+                 -tce-fresh.qcow
+                 -vapic.bin
+                 -vgabios-cirrus.bin
+                 -vmlinuz
+             -Resources
+                 -q_icon.icns
+             -Info.plist   
+    -Reset
+        -Reset from a Mac.app
+            -Contents
+                -MacOS
+                    -Reset From a Mac
+                -Resources
+                    -MainMenu.nib
+                        -designable.nib
+                        -keyedobjects.nib
+                    -appIcon.icns
+                    -AppSettings.plist
+                    -script
+                -Info.plist 
+        -Server
+            -Ingredients
+                -.vimrc.vimrc
+                -blackboard.vim
+                -bottle.py
+                -dropbear_dss_host_key
+                -dropbear_rsa_hot_key
+                -favicon.ico
+                -index.html
+                -Python.sh
+                -python.vim
+                -rc.local
+                -style.css
+                -webapp.py
+            -Recipe.sh
+        -home-backup.qcow
+        -Reset from Linux.sh
+        -Reset from Windows.bat
+        -WARNING.bat
+        -WinErrorLog.txt
+        ```
+##Bugs
+- Timeouts on the original Recipie.sh tftp transfer
+
+##Road Map
+- Update core.gz and vmlinuz to the latest Tiny Core Linux versions
+- Figure out how to do a static compile with Homebrew to eliminate .dylib's
+- Compile Windows qemu using curses mode eliminate pointer grabbing
+- Figure out how to configure compiles for extremely minimal qemu's.
+- A lesson on how Levinux is put together & why (QEMU networking, port mapping)
+- A tutorial on pulling down new software from the Tiny Core Linux repository
+- [Done] A tutorial teaching how to SSH into your Levinux
+- [Done] A tutorial how to reach that text file from localhost:8080
+- [Done] A turorial on how Levinux works so well with Dropbox for Code for Life.
+- [Done] A tutorial how to use vim to create a new text file (vim intro)
+- [Done] A tutorial on how to push code up to Github, Bitbucket or Google Code
+
+
+##Change-log
+Tue Oct 29 15:51:26 EDT 2013
+Now both Linux and Mac QEMU's are compiled from source.
+Compiled QEMU 1.6.1 from source for 64 bit Linux
+Compiled QEMU 1.6.1 from Homebrew for Mac
+Added a bunch of .dylib files for new Mac dependencies
+Switched Linux start script to text-only curses mode
+Radically altered Mac startup script to enable curses mode (AppleScript used)
+Moved keymap files out of subfolder into MacOS for Mac qemu requirement
+Added efi-e1000.rom for Mac qemu requirement
+
+Thu Oct 24 16:49:27 EDT 2013
+This is the first major step towards not relying on magic cocktail binaries
+Compiled qemu from source for 32-bit Linux, QEMU version 1.6.1
+Compiled with --static --enable-curses option for text-only mode
+Added -curses parameter to 32-bit branch of Linux launch script
+Removed libaio.so.1
+Removed libcaca.so.0
+Removed libcurl-gnutls.so.4
+Removed libgnutls.so.26
+Removed librados.so.2
+Removed librbd.so.1
+Removed librtmp.so.0
+Removed libSDL-1.2.so.0
+Removed libslang.so.2
+
+Mon Oct 11 13:06:00 EDT 2013
+Broke webapp2 and dependencies out into optional Libraries menu
+Added color coding to show which libraries are already installed
+
+Thu Oct  3 13:57:31 EDT 2013
+Added WebOb, Paste, and webapp2 to be more like Google App Engine web dev env
+Added requests package because it's the right thing to do
+For OpenSUSE 64, added libcaca.so.0
+For OpenSUSE 64, added libcurl-gnutls.so.4
+For OpenSUSE 64, added libgnutls.so.26
+For OpenSUSE 64, added libpng12.so.0
+For OpenSUSE 64, added librtmp.so.0
+For OpenSUSE 64, added libslang.so.2
+For OpenSUSE 64, added libtasn1.so.3
+
+Tue Oct  1 14:39:47 PDT 2013
+Added libSDL-1.2.so.0 for 64 bit Ubuntu compatibility
+Added menu for Client Libraries, starting with Google API Python Client
+
+Wed Sep 25 17:34:59 EDT 2013
+Edited Python.sh to remove pip version dependency. Made pip persistent.
+
+Tue May 21 13:03:53 EDT 2013
+Revised README.txt
+Added kvmvapic.bin
+Added pxe-rtl8139.rom
+
+Mon May 20 14:30:08 EDT 2013
+Added librbd.so.1 for 32 bit Linux
+Added librados.so.2 for 32 bit Linux
+Changed LD_LIBRARY_PATH to search both ./linux64/:./
+
+Thu May 16 14:07:19 PDT 2013
+Replaced incorrect qemu-system-x86_64 binary with good from Ubuntu 64-bit
+Fixed chmod command in Linux launch script to set execution bit correctly
+Created MacOS/linux64 directory and put 64-bit version of libaio.so.1 in there
+Put missing libraries for 64 bit: librdb.so.1 and librados.so.2 in linux64
+
+Tue May  7 15:22:53 EDT 2013
+Replaced qemu linux binary with qemu-system-i386 and qemu-system-x86_64
+Changed Linux launch script to auto-sense 32 or 64 bit and use correct binary
+Added tce-load -wi python-distribute to Python.sh
+Added sudo easy_install pip to Python.sh
+Added entries to .filetool.lst to make pip persistent
+Added pxe-rtl8139.bin and vapic.bin to MacOS folder per net feedback
+Changed LD_LIBRARY_PATH for 64-bit version. Only 3 dependencies! Binary is big!
+
+Tue Apr 30 13:31:58 EDT 2013
+Added curl and expat2 repository pull requirements for git to Python.sh
+Added echo "export GIT_SSL_NO_VERIFY=true" >> /home/tc/.ashrc to Recipe.sh
+
+Sat Apr 20 05:51:45 EDT 2013
+Dramatically improved index.html at localhost:8080
+Added instructions on how to SSH from Mac or Windows.
+Added instructions on how to edit HTML with vi.
+Added Clout-ware, history, community messages and such.
+
+Thu Apr 18 18:29:17 EDT 2013
+Added the bottle.py single-file web framework. Put in Ingredients due to https.
+Added port redirection to allow 8888 through.
+Added /home/tc/pydocs folder for bottle.py
+Created a webapp.py default app for bottle.py
+Added favicon.ico to prevent 404s and added it Recipe.sh and Python.sh tftp
+Upper-cased Python.sh to be consistent with Recipe.sh
+
+Tue Apr 16 13:19:53 EDT 2013
+Added set +e to Linux & OS X reset scripts to ensure it doesn't exit out.
+Added menu item #4 to fetch Python / added python.sh to Ingredients.
+Fetching vim with Python. Color coding has lots of dependencies including XLibs!
+Fetching git with Python. Changed my mine from Mercurial. Git is better to know.
+Added .vimrc, python.vim and blackboard.vim to Ingredients.
+Made menu item #4 change based on whether or not Python is installed.
+Switched from g-wan to busybox-httpd. Speeds up initial boot.
+Added an index.html to the Ingredients folder and tftp it into place.
+
+Mon Apr 15 16:50:14 EDT 2013
+Added *conflicted* to Reset scripts to clean up Dropbox conflict cruft.
+Instruct how to run from Linux terminal if double-click only loads text editor.
+Redirecting all stderr output as [Platform]ErrorLog.txt into /Reset folder.
+
+Thu Feb 14 17:08:41 EST 2013
+Gave up on compiling my own QEMU binaries (for now) and using what was in
+Levinux Proof of Concept, but removed unnecessary files and added a number of
+dependency files after testing on various default OSes.
+
+##Places to rev version number
+1. Top of this README.txt file
+2. Levinux/Reset/Server/Recipe.sh
+3. Levinux/Reset/Server/Ingredients/index.html
+4. Levinux/Reset/Server/Ingredients/rc.local
+5. On the website at http://mikelev.in/ux/
+
+
