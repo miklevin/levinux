@@ -198,7 +198,7 @@ about how to use Levinux and how to get started programming with it.
         -Reset from Windows.bat
         -WARNING.bat
         -WinErrorLog.txt
-        ```
+```
 ##Bugs
 - Timeouts on the original Recipie.sh tftp transfer
 
