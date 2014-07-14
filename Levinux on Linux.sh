@@ -3,22 +3,8 @@
 pwd
 cd ./Levinux\ on\ Mac.app/Contents/MacOS/
 pwd
-declare myqemu
-MACHINE_TYPE=`uname -m`
-if [ ${MACHINE_TYPE} == 'x86_64' ]; then
-  myqemu="qemu-system-x86_64"
-  if ! [ -x "qemu-system-x86_64" ]; then
-    chmod +x qemu-system-x86_64
-  fi
-else
-  myqemu="qemu-system-i386"
-  if ! [ -x "qemu-system-i386" ]; then
-    chmod +x qemu-system-i386
-  fi
-fi
-
 export LD_LIBRARY_PATH
-./$myqemu -curses \
+./qemu-system-i386 -curses \
 -kernel vmlinuz \
 -initrd microcore.gz \
 -L ./ \
