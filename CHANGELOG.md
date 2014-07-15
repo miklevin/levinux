@@ -5,6 +5,33 @@ https://www.youtube.com/watch?v=p7xf85wgVKo
 
 # Beginning of Journal
 --------------------------------------------------------------------------------
+## Mon Jul 14 21:12:38 EDT 2014
+
+Updated the Mac binary to get rid of the illegal instruction 4 error. Only
+tested with OS X 10.8.5 currently. Earlier versions and Maverick testing
+needed. Many corresponding dylib files updated. bios.bin in macbios folder may
+no longer be necessary, replaced by bios-256k.bin.
+
+Github pulls on the Mac were blowing away file permissions, so I experimented
+with committing chmod +x changes to the RunOnMac.sh and Reset from a Mac files.
+All looks good. Double-clicking the package after a git clone now works. I
+should consider doing the same for Linux and perhaps Windows. 
+
+It turns out that my auto-selection bash script logic for choosing the 32 or 64
+bit files had been fubar for a long time. Running Levinux on a 64 bit version
+resulted in the 32 bit version running, which seems to work much more smoothly
+than when I first had to make the split. Performance is NOT a feature of
+Levinux, so I'm setting it to always be 32 Bit, which is a major simplification
+of the scripts and dependency management.
+
+Also, I am really starting so see the advantages of Levinux being in git now.
+When I make changes like this, I merely only need to do a commit of the files I
+worked on and a push, and not have to worry about a full reset of the system
+and recovering a fresh directory state, promising more rapid development.
+
+Now to rev the numbers to 2.4.
+
+--------------------------------------------------------------------------------
 ## Fri Apr 11 10:35:47 EDT 2014
 
 Latest status:
