@@ -9,7 +9,7 @@ osascript -e 'tell app "Terminal"
     tell application "Terminal"
        activate
        set background color of window 1 to {0,0,0,0}
-       set bounds of window 1 to {100, 100, (571+100), (430+100)}
+       set bounds of window 1 to {100, 100, (571+100), (366+100)}
     end tell
 end tell'
 exit
