@@ -5,7 +5,7 @@
                    | |___|  __/\ V / | | | | | |_| |>  <
                    |_____|\___| \_/  |_|_| |_|\__,_/_/\_\
 
-                              Beta Version 2.3
+                              Beta Version 2.4
              Portable Linux Server and Programming Environment
 
 --------------------------------------------------------------------------------
@@ -16,29 +16,23 @@
     * Mac OSX
     * Windows
     * Linux
-    * Tested Systems
 * Beginning Levinux
     * Booting Levinux
     * Connecting to Levinux
-    * The Next Step
-* File Manifest
+    * Next Steps
 * Bugs
 * Road Map
-* Dependencies
-    * Linux
-    * Mac OSX 
 * Contributions
-* Change-log 
 
 ##About Levinux
-Levinux is a tiny virtual Linux server that runs without installation from USB
-or Dropbox on Mac, Windows, or Linux. This makes Levinux an ideal learning
-environment and a great way to run and keep your code safe for life. Levinux is
-and introduction to "short stack" development which becomes more and more
-relevant as Linux becomes more ubiquitous. Levinux is a remix of Tiny Core
-Linux and QEMU. Tiny Core Linux is an extremely small Linux based on how
-"embedded systems" work, and QEMU is a PC emulator that runs on many platforms.
-
+Levinux is a tiny virtual Linux server that runs without admin rights or an
+install. It will run directly from USB or Dropbox on Mac, Windows, or Linux.
+This makes Levinux an ideal learning environment and a great way to run and
+keep your code safe for life. Levinux is and introduction to "short stack"
+development which becomes more and more relevant as Linux becomes more
+ubiquitous. Levinux is a remix of Tiny Core Linux and QEMU. Tiny Core Linux is
+an extremely small Linux based on how "embedded systems" work, and QEMU is a PC
+emulator that runs on many platforms.
 
 ##Installing Levinux
 ###Mac OSX
@@ -64,14 +58,6 @@ will fail to run, or open in a text editor. To solve this problem, change the
 permissions on the script to executable, and then try running the script.
 Unfortunately, since there are so many different distributions of Linux, this
 readme cannot provide specific instructions for all of them.
-
-###Tested Systems
-* Mac OS X 10.8.5 64-bit
-* Windows 7 Enterprise 64-bit SP1
-* Windows XP Professional 32-bit SP3
-* Ubuntu 13.04 32-bit
-* Ubuntu 13.04 64-bit
-* OpenSUSE 64-bit
 
 ##Beginning Levinux
 ###Booting Levinux 
@@ -109,98 +95,9 @@ documentation. This is hosted by Levinux. To access it once Levinux is booted,
 you can type "localhost:8080" into any browser to load the documentation
 about how to use Levinux and how to get started programming with it.
 
-##File Manifest
-```
-- Levinux
-    - README.txt
-    - Levinux on Windows.vbs 
-    - Levinux on Linux.sh 
-    - Levinux on Mac.app 
-        -Contents
-            -MacOS
-                -macbios
-                    -bios.bin
-                    -vgabios-cirrus.bin
-                 -bios.bin
-                 -common
-                 -efi-e1000.rom
-                 -en-us
-                 -fmod.dll
-                 -home.qcow
-                 -home-fresh.qcow
-                 -i386-softmmu
-                 -kvmvapic.bin
-                 -libglib-2.0.0.dylib
-		 -libgmp.10.dylib
-		 -libgnutls.28.dylib
-		 -libgthread-2.0.0.dylib
-		 -libhogweed.2.3.dylib
-		 -libintl.8.dylib
-		 -libjpeg.8.dylib
-		 -libnettle.4.5.dylib
-		 -libp11-kit.0.dylib
-		 -libpixman-1.0.dylib
-		 -libtasn1.6.dylib
-                 -LICENSE
-                 -linuxboot.bin
-                 -microcore.gz
-                 -opt.qcow
-                 -opt-fresh.qcow
-                 -pxe-e1000.bin
-                 -pxe-rtl8139.bin
-                 -pxe-rtl8139.rom
-                 -qemu.exe
-                 -qemu-system-i386
-                 -qemu-system-x86_64
-                 -RunOnMac.sh
-                 -RunOnWindows.bat
-                 -SDL.dll
-                 -stderr.txt
-                 -stdout.txt
-                 -tce.qcow
-                 -tce-fresh.qcow
-                 -vapic.bin
-                 -vgabios-cirrus.bin
-                 -vmlinuz
-             -Resources
-                 -q_icon.icns
-             -Info.plist   
-    -Reset
-        -Reset from a Mac.app
-            -Contents
-                -MacOS
-                    -Reset From a Mac
-                -Resources
-                    -MainMenu.nib
-                        -designable.nib
-                        -keyedobjects.nib
-                    -appIcon.icns
-                    -AppSettings.plist
-                    -script
-                -Info.plist 
-        -Server
-            -Ingredients
-                -.vimrc.vimrc
-                -blackboard.vim
-                -bottle.py
-                -dropbear_dss_host_key
-                -dropbear_rsa_hot_key
-                -favicon.ico
-                -index.html
-                -Python.sh
-                -python.vim
-                -rc.local
-                -style.css
-                -webapp.py
-            -Recipe.sh
-        -home-backup.qcow
-        -Reset from Linux.sh
-        -Reset from Windows.bat
-        -WARNING.bat
-        -WinErrorLog.txt
-```
 ##Bugs
 - Timeouts on the original Recipie.sh tftp transfer
+- Windows QEMU still in SDL mode and captures mouse pointer
 
 ##Road Map
 - Update core.gz and vmlinuz to the latest Tiny Core Linux versions
@@ -214,118 +111,6 @@ about how to use Levinux and how to get started programming with it.
 - [Done] A turorial on how Levinux works so well with Dropbox for Code for Life.
 - [Done] A tutorial how to use vim to create a new text file (vim intro)
 - [Done] A tutorial on how to push code up to Github, Bitbucket or Google Code
-
-
-##Change-log
-Tue Oct 29 15:51:26 EDT 2013
-Now both Linux and Mac QEMU's are compiled from source.
-Compiled QEMU 1.6.1 from source for 64 bit Linux
-Compiled QEMU 1.6.1 from Homebrew for Mac
-Added a bunch of .dylib files for new Mac dependencies
-Switched Linux start script to text-only curses mode
-Radically altered Mac startup script to enable curses mode (AppleScript used)
-Moved keymap files out of subfolder into MacOS for Mac qemu requirement
-Added efi-e1000.rom for Mac qemu requirement
-
-Thu Oct 24 16:49:27 EDT 2013
-This is the first major step towards not relying on magic cocktail binaries
-Compiled qemu from source for 32-bit Linux, QEMU version 1.6.1
-Compiled with --static --enable-curses option for text-only mode
-Added -curses parameter to 32-bit branch of Linux launch script
-Removed libaio.so.1
-Removed libcaca.so.0
-Removed libcurl-gnutls.so.4
-Removed libgnutls.so.26
-Removed librados.so.2
-Removed librbd.so.1
-Removed librtmp.so.0
-Removed libSDL-1.2.so.0
-Removed libslang.so.2
-
-Mon Oct 11 13:06:00 EDT 2013
-Broke webapp2 and dependencies out into optional Libraries menu
-Added color coding to show which libraries are already installed
-
-Thu Oct  3 13:57:31 EDT 2013
-Added WebOb, Paste, and webapp2 to be more like Google App Engine web dev env
-Added requests package because it's the right thing to do
-For OpenSUSE 64, added libcaca.so.0
-For OpenSUSE 64, added libcurl-gnutls.so.4
-For OpenSUSE 64, added libgnutls.so.26
-For OpenSUSE 64, added libpng12.so.0
-For OpenSUSE 64, added librtmp.so.0
-For OpenSUSE 64, added libslang.so.2
-For OpenSUSE 64, added libtasn1.so.3
-
-Tue Oct  1 14:39:47 PDT 2013
-Added libSDL-1.2.so.0 for 64 bit Ubuntu compatibility
-Added menu for Client Libraries, starting with Google API Python Client
-
-Wed Sep 25 17:34:59 EDT 2013
-Edited Python.sh to remove pip version dependency. Made pip persistent.
-
-Tue May 21 13:03:53 EDT 2013
-Revised README.txt
-Added kvmvapic.bin
-Added pxe-rtl8139.rom
-
-Mon May 20 14:30:08 EDT 2013
-Added librbd.so.1 for 32 bit Linux
-Added librados.so.2 for 32 bit Linux
-Changed LD_LIBRARY_PATH to search both ./linux64/:./
-
-Thu May 16 14:07:19 PDT 2013
-Replaced incorrect qemu-system-x86_64 binary with good from Ubuntu 64-bit
-Fixed chmod command in Linux launch script to set execution bit correctly
-Created MacOS/linux64 directory and put 64-bit version of libaio.so.1 in there
-Put missing libraries for 64 bit: librdb.so.1 and librados.so.2 in linux64
-
-Tue May  7 15:22:53 EDT 2013
-Replaced qemu linux binary with qemu-system-i386 and qemu-system-x86_64
-Changed Linux launch script to auto-sense 32 or 64 bit and use correct binary
-Added tce-load -wi python-distribute to Python.sh
-Added sudo easy_install pip to Python.sh
-Added entries to .filetool.lst to make pip persistent
-Added pxe-rtl8139.bin and vapic.bin to MacOS folder per net feedback
-Changed LD_LIBRARY_PATH for 64-bit version. Only 3 dependencies! Binary is big!
-
-Tue Apr 30 13:31:58 EDT 2013
-Added curl and expat2 repository pull requirements for git to Python.sh
-Added echo "export GIT_SSL_NO_VERIFY=true" >> /home/tc/.ashrc to Recipe.sh
-
-Sat Apr 20 05:51:45 EDT 2013
-Dramatically improved index.html at localhost:8080
-Added instructions on how to SSH from Mac or Windows.
-Added instructions on how to edit HTML with vi.
-Added Clout-ware, history, community messages and such.
-
-Thu Apr 18 18:29:17 EDT 2013
-Added the bottle.py single-file web framework. Put in Ingredients due to https.
-Added port redirection to allow 8888 through.
-Added /home/tc/pydocs folder for bottle.py
-Created a webapp.py default app for bottle.py
-Added favicon.ico to prevent 404s and added it Recipe.sh and Python.sh tftp
-Upper-cased Python.sh to be consistent with Recipe.sh
-
-Tue Apr 16 13:19:53 EDT 2013
-Added set +e to Linux & OS X reset scripts to ensure it doesn't exit out.
-Added menu item #4 to fetch Python / added python.sh to Ingredients.
-Fetching vim with Python. Color coding has lots of dependencies including XLibs!
-Fetching git with Python. Changed my mine from Mercurial. Git is better to know.
-Added .vimrc, python.vim and blackboard.vim to Ingredients.
-Made menu item #4 change based on whether or not Python is installed.
-Switched from g-wan to busybox-httpd. Speeds up initial boot.
-Added an index.html to the Ingredients folder and tftp it into place.
-
-Mon Apr 15 16:50:14 EDT 2013
-Added *conflicted* to Reset scripts to clean up Dropbox conflict cruft.
-Instruct how to run from Linux terminal if double-click only loads text editor.
-Redirecting all stderr output as [Platform]ErrorLog.txt into /Reset folder.
-
-Thu Feb 14 17:08:41 EST 2013
-Gave up on compiling my own QEMU binaries (for now) and using what was in
-Levinux Proof of Concept, but removed unnecessary files and added a number of
-dependency files after testing on various default OSes.
 
 ##Places to rev version number
 1. Top of this README.txt file
