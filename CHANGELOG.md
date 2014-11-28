@@ -1,5 +1,90 @@
 # Beginning of Journal
 --------------------------------------------------------------------------------
+## Fri Nov 28 15:50:58 EST 2014
+
+I extracted core.gz and vmlinuz from Core-current.iso of Tiny Core Linux and
+put it in MacOS folder, along with a home.qcow file. Updated launch script also
+with quite param. FYI, here's the OLD launch script for Mac:
+
+#!/bin/bash
+
+cd "${0%/*}"
+
+./i386-softmmu \
+-kernel vmlinuz \
+-initrd microcore.gz \
+-hda home.qcow \
+-hdb opt.qcow \
+-hdc tce.qcow \
+-L ./macbios/ \
+-tftp ../../../Reset/Server \
+-redir tcp:2222::22 \
+-redir tcp:8080::80 \
+-redir tcp:8888::81 \
+-append "quiet noautologin home=sda1 opt=sdb1 tce=sdc1" \
+1>/dev/null 2>../../../Reset/MacErrorLog.txt
+
+--------------------------------------------------------------------------------
+## Fri Nov 28 14:39:34 EST 2014
+
+Okay, Levinux Beta 3 is about remastering Levinux to have as few possible steps
+and the most well documented steps to do a remaster. It should also result in
+the most stable Levinux able to run on the broadest range of Mac and Windows
+desktops. Linux desktops will come again later, but if you're already on a
+Linux desktop, you don't need Levinux as much as a Windows or PC person. And
+so... we start with:
+
+Mac QEMU Q-0.9.1d118 - 10.2mb the one labeled Download latest nightly.
+http://www.kju-app.org/builds/download.php?download=nightlies/Q-0.9.1d118.dmg
+This is a fork of qemu from many years ago that lets you save stand-alone
+versions for flash drives. I have never seen a QEMU for Mac that ran on a wider
+variety of Mac OS X versions ever since, and I have tried a lot including
+compiling my own and from MacPorts and Homebrew. Q is still best for Levinux
+purposes.
+
+Windows QEMU from TAKEDA Toshiya version 0.12.2 7.5 MB from 
+at http://homepage3.nifty.com/takeda-toshiya/qemu/index.html
+This is an ancient and consistently reliable and made available version of QEMU
+for Windows, which like Q for the Mac, just runs on such a wide variety of
+Windows desktops, and at only 7.5mb, delivers everything Levinux needs with a
+very small footprint. I've tried compiling my own and using more modern binary
+distros of QEMU for Windows.
+
+Tiny Core Linux for x86 version 5.4 from
+http://tinycorelinux.net/5.x/x86/release/TinyCore-current.iso
+I keep trying to go to other Linuxes, but for a hundred tiny reasons, keep
+getting drawn back to Tiny Core. There's some question whether I'll use the
+TinyCore-current.iso 15MB (currently in this repo) or just Core-current.iso 8MB
+which is text-only. I am no longer trying to keep file size SO SMALL, and if
+there's any advantage in distributing the graphical version, I will.
+
+Platypus 4.8 for Mac OS from
+http://www.sveinbjorn.org/platypus
+This software packs scripts to look and behave like stand-alone executables on
+the Mac using the same trick Q uses to make stand-alone instances of QEMU.
+Because the stand-alone versions are for some reason broken from Q, I used
+Platypus to launch a script called qemuonmac.sh which remains editable. I then
+combined the Platupus output with the Q output keeping directory structures
+intact, and updated qemuonmac.sh to have the commands:
+
+cd ../MacOS
+
+./i386-softmmu -cdrom TinyCore-Current.iso
+
+The Mac looks for most of its qemu-related resources from
+Pipulate.app/Resources/ leaving Pipulate.app/MacOS available to have all the
+Windows qemu distribution dumped into it. In such a way, the Windows and Mac
+qemu files can live together in perfect harmony, hidden in a Mac Software
+Bundle and everything finding what's needed when the launchers are
+double-clicked. For the Windows version, I had to make a qemu.bat file which
+gets called from a Pipulate.vbs file that sits at the same level as the
+Pipulate.app software bundle folder.
+
+And that's where we are at currently. It's stable and probably even useful to a
+lot of people in this form who want to test different .iso files with QEMU. But
+it's not quite where I need it to be. 
+
+--------------------------------------------------------------------------------
 ## Fri Nov 28 14:06:38 EST 2014
 
 I am starting a pretty big remastering of Levinux. The current status is merely
