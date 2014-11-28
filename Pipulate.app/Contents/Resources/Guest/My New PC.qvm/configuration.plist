@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>About</key>
+	<dict>
+		<key>Author</key>
+		<string>Q</string>
+		<key>Copyright</key>
+		<string>none</string>
+		<key>Date</key>
+		<date>2014-11-27T00:06:01Z</date>
+		<key>Description</key>
+		<string>Q guest PC</string>
+	</dict>
+	<key>Arguments</key>
+	<string> -m 128 -localtime -net nic -net user -smb ~/Desktop/Q Shared Files/ -cdrom /Users/miklevin/Desktop/Core-current.iso -boot d</string>
+	<key>PC Data</key>
+	<dict>
+		<key>architecture</key>
+		<string>x86</string>
+		<key>name</key>
+		<string>My New PC</string>
+		<key>state</key>
+		<string>shutdown</string>
+	</dict>
+	<key>Temporary</key>
+	<dict>
+		<key>-cocoapath</key>
+		<string>/Users/miklevin/Documents/QEMU/My New PC.qvm</string>
+	</dict>
+	<key>Version</key>
+	<string>0.2.0.Q</string>
+</dict>
+</plist>

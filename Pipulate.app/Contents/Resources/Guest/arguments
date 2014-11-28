@@ -1,0 +1,1 @@
+ -m 128 -localtime -net nic -net user -smb ~/Desktop/Q Shared Files/ -cdrom Core-current.iso -boot d -cocoaquartz -cocoaname My New PC (Standalone Mode)

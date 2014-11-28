@@ -1,0 +1,1 @@
+qemu.exe -cdrom TinyCore-current.iso

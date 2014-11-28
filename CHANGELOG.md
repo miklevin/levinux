@@ -1,9 +1,12 @@
-> Levinux is a tiny Linux server based on QEMU that doesn't require an install
-> or admin rights on the host PC. Great for learning and appliance projects.
-
-https://www.youtube.com/watch?v=p7xf85wgVKo
-
 # Beginning of Journal
+--------------------------------------------------------------------------------
+## Fri Nov 28 14:06:38 EST 2014
+
+I am starting a pretty big remastering of Levinux. The current status is merely
+the latest Tiny Core Linux combined with an old fork of QEMU for the Mac called
+Q and an old pre-compiled binary of QEMU for Windows. Stay tuned. I'll get it
+back to where Levinux was, and combine it with my Pipulate project.
+
 --------------------------------------------------------------------------------
 ## Mon Jul 14 21:12:38 EDT 2014
 
