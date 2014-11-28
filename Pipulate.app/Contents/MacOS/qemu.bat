@@ -1,1 +1,1 @@
-qemu.exe -cdrom TinyCore-current.iso
+qemu.exe -kernel vmlinuz -initrd core.gz -hda home.qcow
