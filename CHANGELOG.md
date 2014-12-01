@@ -1,5 +1,130 @@
 # Beginning of Journal
 --------------------------------------------------------------------------------
+## Mon Dec  1 15:00:36 EST 2014
+
+Pshwew! After a bunch of Windows 7 crashes after boot and login of Levinux, I
+switched to Takeda Toshiya's version 12.5 of QEMU from
+http://homepage3.nifty.com/takeda-toshiya/
+
+The large file size increase is from the inclusion of the /bin subfolder, which
+can be left out.
+
+--------------------------------------------------------------------------------
+## Mon Dec  1 14:24:03 EST 2014
+
+I'm editing this out of the Recipe.sh that gets copied over from the host.
+Something in here is crashing the boot. 
+
+#Set up an ssh and sftp server (allows you to get in from the host machine)
+sudo -u tc tce-load -wi dropbear > /dev/null
+sudo -u tc tce-load -wi sftp-server > /dev/null
+sudo -u tc tce-load -wi busybox-httpd > /dev/null
+mkdir /home/tc/htdocs
+
+tftp -g -l /home/tc/htdocs/index.html -r /Ingredients/index.html 10.0.2.2
+tftp -g -l /home/tc/htdocs/style.css -r /Ingredients/style.css 10.0.2.2
+tftp -g -l /home/tc/htdocs/favicon.ico -r /Ingredients/favicon.ico 10.0.2.2
+tftp -g -l /home/tc/Python.sh -r /Ingredients/Python.sh 10.0.2.2
+tftp -g -l /etc/dropbear/dropbear_dss_host_key -r /Ingredients/dropbear_dss_host_key 10.0.2.2
+tftp -g -l /etc/dropbear/dropbear_rsa_host_key -r /Ingredients/dropbear_rsa_host_key 10.0.2.2
+tftp -g -l /etc/rc.local -r /Ingredients/rc.local 10.0.2.2
+echo -e "etc/rc.local\netc/init.d/dropbear\netc/dropbear\nusr/bin/dbclient\nusr/bin/dropbear\nusr/bin/dropbearconvert\nusr/bin/dropbearkey\nusr/bin/scp\nusr/bin/ssh\nusr/sbin/dropbearmulti" >> /opt/.filetool.lst
+
+cd /tmp
+echo "/etc/init.d/dropbear start" >> /opt/bootsync.sh
+echo "/usr/local/httpd/sbin/httpd -p 80 -h /home/tc/htdocs -u tc:staff" >> /opt/bootsync.sh
+echo "export GIT_SSL_NO_VERIFY=true" >> /home/tc/.ashrc
+echo "sh /etc/rc.local" >> /opt/bootsync.sh
+cd /home/tc
+
+#Set up a password for tc user (necessary for sftp and other remote tools)
+echo -e "foo\nfoo" | passwd tc > /dev/null
+echo -e "etc/passwd\netc/shadow" >> /opt/.filetool.lst
+
+filetool.sh -b >> /dev/null
+
+--------------------------------------------------------------------------------
+## Mon Dec  1 11:01:53 EST 2014
+
+Okay, so think through next steps with this in mind:
+
+  1. Pipulate / Levinux
+  2. Client work / monthly reports
+  3. Department planning / end-of-year stuff
+
+The year-end stuff is the most important, because my boss is waiting for it and
+it can only come from me. The team will step up for the monthly reports. As far
+as Pipulate/Levinux, I am on the cusp of a breakthrough, and losing momentum
+can be disastrous. It's all about mitigating time issues.
+
+Mon Dec  1 13:16:02 EST 2014
+Do just a quick bit of research to know what your next steps are with Levinux,
+and then switch gears to department planning.
+
+--------------------------------------------------------------------------------
+## Mon Dec  1 10:36:44 EST 2014
+
+Back at the office where I have a Windows 7 machine as my primary work machine.
+I will also be setting up my Dell Pro Venue 8 here as a Windows 8.x machine,
+with the nifty docking station I helped Kickstart. The main problem is going to
+be enough network ports, because when I tried connecting the Linksys router
+that I configured as a switch, it appeared to effect the Internet connection
+here, so I'm hesitant to do that again. And so, it's very difficult to have
+more than one machine at a time connected here, which is also an issue when I
+bring in my Mac Laptops. It's one of the larger hardware priorities to fix
+here.
+
+On a more positive note, I tested the latest remix of Levinux here, and the old
+problem that used to occur on Windows 7 didn't happen. That's an extra console
+window getting stuck open when Levinux is launched. Not sure what fixed it, but
+I'm glad I'm taking this new approach involving keeping the file arrangement as
+close to "natural" as I can from major stable (albeit it ancient) qemu
+distributions, like Q for the Mac and Takeda Toshiya's for Windows. Suddenly,
+it works on OS X 10.10, 10.8.5, Windows XP, Windows 7, and I bet a lot more
+once I get around to testing. Stay close to the beaten track. There's a reason
+these QEMU distros haven't disappeared despite their age. I will have to get
+their respective source code so as to stay in GPL compliance, but its going to
+be a lot easier now that I'm documenting process and versions so well.
+
+I am making a few other improvements to my workflow. I'm using the Dropbox
+account that I set up for Levinux versions, and I'll always keep the archives
+of Levinux on there, PLUS one git pull of the current Levinux project (this
+working directory) and one git pull of the current Pipulate project. That means
+that no matter where I'm doing my work, it will propagate to all my work
+machines, and even if I forget to do a git commit/push before I leave wherever
+I happen to be working that day, I can always pick up right where I left off on
+any of my other machines. That's the right "balance" for Dropbox. I can't use
+my giant archive of my life history on every machine I work on. This creates a
+sort of super-cross-backed-up dynamic between Dropbox and Github.
+
+These journal entries may pop up in either the Levinux CHANGELOG.md (this) or
+journal.txt in the Pipulate project. I will use them fairly interchangeably,
+based on what the priority of the day may be. There is too much garbage in the
+Levinux distros to pollute the main Pipulate branch. People interested in JUST
+Pipulate and not Levinux should not be forced to mess around with a virtual
+machine or wade through tons of files that are not actually pertinent to
+running Pipulate if you're installing it on your own machine.
+
+It's the Monday after Thanksgiving, December 1st, and the monthly reports for
+the SEO clients are going to be due. We have the latest round of monthly work
+ahead of us. Hopefully, we can crank them out and deliver them as quickly as
+possible to be able to move onto more real deliverable work. I also have things
+due to my boss having to do with department planning. And so that makes 3
+things to balance:
+
+  1. Pipulate / Levinux
+  2. Client work / monthly reports
+  3. Department planning / end-of-year stuff
+
+I know it's odd this sort of thinking and day-to-day detail ending up in the
+changelog of a github project like Levinux, but that's part of what makes these
+projects different. They are to become (already are) inextricable from my
+day-to-day work, and by putting a sterilized version of my thoughts (no client
+names or details revealed), I keep my mind where it belongs -- in code and
+technical matters -- rather than the infinitely distracting alternative of web
+browsers and the Internet.
+
+--------------------------------------------------------------------------------
 ## Fri Nov 28 15:50:58 EST 2014
 
 I extracted core.gz and vmlinuz from Core-current.iso of Tiny Core Linux and

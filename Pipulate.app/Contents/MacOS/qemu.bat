@@ -4,4 +4,8 @@ qemu.exe ^
 -hda home.qcow ^
 -hdb opt.qcow ^
 -hdc tce.qcow ^
--append "quiet noautologin loglevel=3 waitusb=5 home=sda1 opt=sdb1 tce=sdc1"
+-tftp ../../../Reset/Server ^
+-redir tcp:2222::22 ^
+-redir tcp:8080::80 ^
+-redir tcp:8888::81 ^
+-append "quiet noautologin norestore loglevel=3 home=sda1 opt=sdb1 tce=sdc1"
