@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AcceptsFiles</key>
+	<true/>
+	<key>AcceptsText</key>
+	<false/>
+	<key>Creator</key>
+	<string>Platypus-4.7</string>
+	<key>Droppable</key>
+	<false/>
+	<key>InterpreterArgs</key>
+	<array/>
+	<key>OutputType</key>
+	<string>Progress Bar</string>
+	<key>RemainRunningAfterCompletion</key>
+	<true/>
+	<key>RequiresAdminPrivileges</key>
+	<false/>
+	<key>ScriptArgs</key>
+	<array/>
+	<key>ScriptInterpreter</key>
+	<string>/bin/sh</string>
+	<key>Secure</key>
+	<false/>
+	<key>TextBackground</key>
+	<string>#ffffff</string>
+	<key>TextEncoding</key>
+	<integer>4</integer>
+	<key>TextFont</key>
+	<string>Monaco</string>
+	<key>TextForeground</key>
+	<string>#000000</string>
+	<key>TextSize</key>
+	<real>10</real>
+</dict>
+</plist>
