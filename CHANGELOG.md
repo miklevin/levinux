@@ -9,6 +9,10 @@ http://homepage3.nifty.com/takeda-toshiya/
 The large file size increase is from the inclusion of the /bin subfolder, which
 can be left out.
 
+I am going to try to pull Python 3 from the 4.x repository. That would save me
+so much effort. And distribute for 4.x as well, and then only use easy_install.
+I need to do that test. Do one more commit.
+
 --------------------------------------------------------------------------------
 ## Mon Dec  1 14:24:03 EST 2014
 
