@@ -1,5 +1,115 @@
 # Beginning of Journal
 --------------------------------------------------------------------------------
+## Mon Dec  1 17:28:43 EST 2014
+
+My goal with Levinux at this point is NOT to create the Linux, Python, vim and
+git platform for development, for there are much better ways to work with vim
+on your local machine. It's almost ridiculous to load up all that heavyweight
+stuff. Instead, it should be about RUNNING Pipulate, and just scratching the
+surface of this development and execution environment, enticing the user to set
+up the equivalent thing on their local machine OR hardware like a Raspberry Pi.
+I still might change my mind on this, but making everyone wait through the
+whole vim install plus its dependencies when the simple vi program is already
+there is a violation of hte 80/20 rule. Introduce people to the built-in vi,
+making the point that it's always there! Maybe have a separate menu item to
+build vim.
+
+I'm thinking that for Python, instead of using tce-load, I maybe should just do
+a wget of the tcz file and the hand-full of files that I know to be real
+dependences, and leave out all the "X" graphics stuff and spare the user a
+bunch of time. 
+
+Okay, so add:
+
+sudo easy_install pygreen
+sudo easy_install gspread
+sudo easy_install flask_wtf
+
+Ugh! That stuff takes so long to install. I'm leaning more and more towards a
+totally pre-build VM. I hate to have multiple versions of Levinux, but that's
+what the realities of the situation are leading me towards.
+
+I'm thinking I may have two distinct VMs -- and that's OKAY! I have:
+
+  * Levinux.com
+  * Pipulate.com
+
+Okay, it appears that the filetool.sh -b thing is sooooo long. Think about
+using yet another file mount and symlink to avoid having to use it for
+site-packages. Well, that's enough for today. I actually did a lot. This is
+very close to actually unifying Pipulate with Levinux. Just try a final
+test-run of Pipulate on Levinux to see if you have it reachable at
+localhost:8888 (which was tricky in its own right). I'm already using 8080 for
+the simple webserver Levinux documentation, which is a very good idea.
+
+I can feel myself zeroing in on the correct solution. Very close.
+
+Okay, I got pipulate accessible from localhost:8888 with the expected Python
+2.7 vs Python 3.4 errors. That was a good day. Commit and revisit.
+
+--------------------------------------------------------------------------------
+## Mon Dec  1 16:45:19 EST 2014
+
+I am questioning the wisdom of including vim in this entire proposition. I can
+make the whole thing much more lightweight if I just nix vim.
+
+Also, I'm questioning how much use of filetool.sh -b I'm using. Do I really
+need all that backing up when I'm making opt, tce and home persistent? Isn't
+that extra backups? I have restore set to skip. I also took sftp out, based on
+the unlikelyhood of people sftping in. It's also not in the latest repository.
+Ugh, I got a crash when it got up to dropbear. Try the 32 bit version. It may
+be that the 32 bit version is just more stable. I could always go up to the
+very newest (still quite old) qemu from Takeda. Well, it got past the Dropbear
+step when it's in 32 bit mode. Figures. Okay, get rid of the 64bit option.
+
+Okay, I put back in backup and restore. Definitely necessary for the Dropbear
+related files and such. Still stripped out vim and all manually edited-in
+dependencies. Dependency resolution is much stronger in the newer Tiny Core
+Linuxes. Also abandoning any idea of grabbing Python-3.x out of older TCL
+repositories, because there's not even a 3.x Python-distribute package. And so,
+stay on the well beaten trail, and just modify Pipulate to be Python 2.7
+friendly. Not my favorite idea, but still probably the most solid approach to
+make Pipulate actually usable to the largest audience.
+
+Also I'm seeing that this idea of "building" the server can/will turn a lot of
+people off, when I could just make a single pre-build download that you can
+just run and start pipulating.
+
+So, what are my conclusions about persistence and the need for doing
+filetool.sh backups? Anything that's not a simple extension install or that
+resides in /home needs it. Why? Shouldn't opt being persistent eliminate the
+need? One would think it should.
+
+Ah ha! It's when things are mapped into EXACTLY THE SAME SPACE as the core
+system being served from RAM, like /etc/rc.local
+
+Those things HAVE TO use the tiny core linux backup and restore system.
+
+Okay, I'm leaving pip out of the picture for now, and am just going to rely on
+Python-distribute easy_install. However, even that requires site-packages to be
+backed up because... hmmmm. Can I avoid that? Don't worry about it for now.
+Just use the backup and restore system until you have more time.
+
+--------------------------------------------------------------------------------
+## Mon Dec  1 15:49:53 EST 2014
+
+This is how we add extensions:
+wget http://www.tinycorelinux.net/4.x/x86/tcz/extension_name.tcz
+
+I'm less keen on this than I was a moment ago, after (once again) looking
+throught the TCL 4.x repository for how this would be done. There does not
+appear to be a distribute for Python 3.x. Just see if you can get Levinux back
+to where it was, but on the latest Tiny Core Linux and QEMUs that actually run.
+
+I'm getting the old Levinux startup procedure working. There's a remarkable
+amount of cleverness in there. Building the secondary stage Python server takes
+just soooooo long! I don't know if it's a slow network connection, or if it
+just really does take that long these days with all the dependencies (going
+from Python 2.6 to 2.7). Dependency resolution is supposed to be much better,
+so maybe I can delete out all the seemingly extraneous tce-loads and see if it
+speeds things up at all. And pip takes particularly so long. 
+
+--------------------------------------------------------------------------------
 ## Mon Dec  1 15:00:36 EST 2014
 
 Pshwew! After a bunch of Windows 7 crashes after boot and login of Levinux, I

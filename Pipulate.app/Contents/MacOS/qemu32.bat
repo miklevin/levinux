@@ -7,5 +7,5 @@ qemu.exe ^
 -tftp ../../../Reset/Server ^
 -redir tcp:2222::22 ^
 -redir tcp:8080::80 ^
--redir tcp:8888::81 ^
--append "quiet noautologin norestore loglevel=3 home=sda1 opt=sdb1 tce=sdc1"
+-redir tcp:8888::8888 ^
+-append "quiet noautologin loglevel=3 home=sda1 opt=sdb1 tce=sdc1"

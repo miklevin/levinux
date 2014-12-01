@@ -18,32 +18,31 @@ echo -e "\e[1;37m"
 # everything necessary to make it a development platform
 tce-load -wi python > /dev/null
 tce-load -wi python-distribute > /dev/null
-tce-load -wi curl > /dev/null
-tce-load -wi expat2 > /dev/null
 tce-load -wi git > /dev/null
-tce-load -wi Xlibs > /dev/null
-tce-load -wi vim > /dev/null
-rm /usr/local/share/vim/vim72/syntax/python.vim
-tftp -g -l /usr/local/share/vim/vim72/syntax/python.vim -r /Ingredients/python.vim 10.0.2.2
-tftp -g -l /usr/local/share/vim/vim72/colors/blackboard.vim -r /Ingredients/blackboard.vim 10.0.2.2
-tftp -g -l /usr/local/share/vim/vim72/colors/blackboard.vim -r /Ingredients/blackboard.vim 10.0.2.2
-tftp -g -l /home/tc/.vimrc -r /Ingredients/.vimrc 10.0.2.2
+sudo easy_install pygreen
+sudo easy_install gspread
+sudo easy_install flask_wtf
+cd /home/tc/
+git clone https://github.com/miklevin/pipulate.git
 
-mkdir /home/tc/pydocs
-tftp -g -l /home/tc/pydocs/bottle.py -r /Ingredients/bottle.py 10.0.2.2
-tftp -g -l /home/tc/pydocs/webapp.py -r /Ingredients/webapp.py 10.0.2.2
-tftp -g -l /home/tc/pydocs/favicon.ico -r /Ingredients/favicon.ico 10.0.2.2
+# tce-load -wi vim > /dev/null
+# rm /usr/local/share/vim/vim72/syntax/python.vim
+# tftp -g -l /usr/local/share/vim/vim72/syntax/python.vim -r /Ingredients/python.vim 10.0.2.2
+# tftp -g -l /usr/local/share/vim/vim72/colors/blackboard.vim -r /Ingredients/blackboard.vim 10.0.2.2
+# tftp -g -l /usr/local/share/vim/vim72/colors/blackboard.vim -r /Ingredients/blackboard.vim 10.0.2.2
+# tftp -g -l /home/tc/.vimrc -r /Ingredients/.vimrc 10.0.2.2
 
-echo "Final stage: installing pip, requests & running backup. Ignore warnings."
-sudo easy_install pip > /dev/null
-sudo pip install requests > /dev/null
+# echo "Final stage: installing pip, requests & running backup. Ignore warnings."
+# sudo easy_install pip > /dev/null
+# sudo pip install requests > /dev/null
 
-echo "usr/local/share/vim/vim72/syntax/python.vim" >> /opt/.filetool.lst
-echo "usr/local/share/vim/vim72/colors/blackboard.vim" >> /opt/.filetool.lst
-echo "usr/local/bin/pip" >> /opt/.filetool.lst
-echo "usr/local/bin/pip-2.7" >> /opt/.filetool.lst
+# echo "usr/local/share/vim/vim72/syntax/python.vim" >> /opt/.filetool.lst
+# echo "usr/local/share/vim/vim72/colors/blackboard.vim" >> /opt/.filetool.lst
+# echo "usr/local/bin/pip" >> /opt/.filetool.lst
+# echo "usr/local/bin/pip-2.7" >> /opt/.filetool.lst
+
+# Badck up things installed with Python-distribute easy_install
 echo "usr/local/lib/python2.7/site-packages/" >> /opt/.filetool.lst
-
 filetool.sh -b
 exit
 

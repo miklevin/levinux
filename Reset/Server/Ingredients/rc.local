@@ -13,7 +13,7 @@ until [ "$selection" = "0" ]; do
     echo "                     | |    / _ \ \ / /| | '_ \| | | \ \/ /"
     echo "                     | |___|  __/\ V / | | | | | |_| |>  <"
     echo "                     |_____|\___| \_/  |_|_| |_|\__,_/_/\_\\"
-    echo "                       (Code For Life - Beta Version 2.4)"
+    echo "                       (Code For Life - Beta Version 3.0)"
     echo ""
     echo ""
     echo -e "         \e[1;37mVisit http://localhost:8080 on this computer's web browser.\e[00m"
