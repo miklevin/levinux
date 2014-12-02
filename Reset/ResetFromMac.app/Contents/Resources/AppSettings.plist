@@ -7,15 +7,17 @@
 	<key>AcceptsText</key>
 	<false/>
 	<key>Creator</key>
-	<string>Platypus-4.7</string>
+	<string>Platypus-4.8</string>
 	<key>Droppable</key>
 	<false/>
 	<key>InterpreterArgs</key>
 	<array/>
 	<key>OutputType</key>
-	<string>Progress Bar</string>
+	<string>None</string>
+	<key>PromptForFileOnLaunch</key>
+	<false/>
 	<key>RemainRunningAfterCompletion</key>
-	<true/>
+	<false/>
 	<key>RequiresAdminPrivileges</key>
 	<false/>
 	<key>ScriptArgs</key>
@@ -24,15 +26,5 @@
 	<string>/bin/sh</string>
 	<key>Secure</key>
 	<false/>
-	<key>TextBackground</key>
-	<string>#ffffff</string>
-	<key>TextEncoding</key>
-	<integer>4</integer>
-	<key>TextFont</key>
-	<string>Monaco</string>
-	<key>TextForeground</key>
-	<string>#000000</string>
-	<key>TextSize</key>
-	<real>10</real>
 </dict>
 </plist>

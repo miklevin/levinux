@@ -5,27 +5,27 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>Reset From a Mac</string>
+	<string>ResetFromMac</string>
 	<key>CFBundleExecutable</key>
 	<string>ResetFromMac</string>
-	<key>CFBundleIconFile</key>
-	<string>appIcon.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.miklevin.ResetFromaMac</string>
+	<string>org.miklevin.ResetFromMac</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>ResetFromMac</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.5.0</string>
 	<key>LSUIElement</key>
-	<false/>
+	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>© 2013 Michael Levin</string>
+	<string>© 2014 Michael Levin</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
