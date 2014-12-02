@@ -4,7 +4,7 @@ cd ../MacOS
 -kernel vmlinuz \
 -initrd core.gz \
 -hda home.qcow \
--hda opt.qcow \
+-hdb opt.qcow \
 -hdc tce.qcow \
 -tftp ../../../Reset/Server \
 -redir tcp:2222::22 \
