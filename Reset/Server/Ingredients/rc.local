@@ -3,10 +3,15 @@
 clear
 selection=
 until [ "$selection" = "0" ]; do
-    echo -e "\e[1;33mThis is your last chance. After this there is no turning back. You take the blue"
-    echo "pill, the story ends, and you believe whatever you want to believe. You take the"
-    echo "red pill... you stay in Wonderland and I show you how deep the rabbit hole goes!"
-    echo ""
+    if [ -e /tmp/firstboot.txt ]; then
+        echo -e "\e[1;33mThis is your last chance. After this there is no turning back. You take the blue"
+        echo "pill, the story ends, and you believe whatever you want to believe. You take the"
+        echo "red pill... you stay in Wonderland and I show you how deep the rabbit hole goes!"
+        echo ""
+    else
+        echo ""
+        echo ""
+    fi
     echo -e "\e[1;34m                                                        \e[0;37m...                " 
     echo -e "\e[1;37m            A tiny virtual server to help you learn.   \e[0;37mx88\" !.            "
     echo -e "\e[1;34m             ____  _             _       _            \e[0;37m888X   8  .-=x.      "
@@ -20,7 +25,6 @@ until [ "$selection" = "0" ]; do
     echo -e "\e[1;31m            |_____\\___| \\_/ |_|_| |_|\\__,_/_/\\_\\  \e[0;37m'*8888888\"  '888   "
     echo -e "\e[1;31m                                                    \e[0;37m\`\"\"\"\"\"   .88%    "
     echo ""
-#    echo -e "         To get back your mouse pointer, press: \e[1;31mLeft+Ctrl, Left+Alt\e[00m."
     echo ""
     echo -e "\e[1;37m MAKE YOUR CHOICE:"
     if [ ! -d /tmp/tcloop/python ]; then
