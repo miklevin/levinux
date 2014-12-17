@@ -25,6 +25,9 @@ git clone https://github.com/miklevin/pipulate.git
 
 # Back up things installed with Python-distribute easy_install
 echo "usr/local/lib/python2.7/site-packages/" >> /opt/.filetool.lst
+cd /home/tc/pipulate/
+nohup python pipulate.py &
+echo -e "cd /home/tc/pipulate/\nnohup python pipulate.py&" >> /opt/bootsync.sh
 filetool.sh -b
 exit
 
