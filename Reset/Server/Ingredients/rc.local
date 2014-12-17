@@ -34,7 +34,7 @@ until [ "$selection" = "0" ]; do
     if [ ! -d /tmp/tcloop/python ]; then
     echo -e "\e[1;34m 1 - Build Pipulate\e[00m <-- Just use the Free SEO and Social Media tools."
     else
-		echo -e "\e[1;34m 1 - Get Libraries\e[00m  <-- Makes programming Google, Facebook, etc. easier."
+		echo -e "\e[1;34m 1 - Pipulate installed\e[00m"
     fi
     echo -e "\e[1;31m 2 - Exit to Login\e[00m  <-- Better yet, \e[1;31mssh tc@localhost -p 2222\e[00m (\e[1;35mpassword: foo\e[00m)"
     echo -e "\e[1;32m 3 - Learn more\e[00m     <-- Better yet, visit \e[1;32mhttp://localhost:8080\e[00m on your browser."
@@ -80,44 +80,7 @@ until [ "$selection" = "0" ]; do
             if [ ! -d /tmp/tcloop/python ]; then
                 sudo -u tc sh /home/tc/Pipulate.sh
             else
-				echo ""
-				echo -e "\e[1;36m GET MORE CLIENT LIBRARIES\e[00m"
-				echo ""
-				echo -e " \e[1;37mClient libraries are additional files to help you program for services from"
-				echo -e " Google, Facebook, Twitter, Tumblr and the like. Select the library you want."
-				echo -e " It will become persistently available on this instance of Levinux until reset. \e[00m"
-				echo ""
-				if [ -e /usr/local/lib/python2.7/site-packages/webapp2.py ]; then
-					echo -e "\e[1;32m 1. (INSTALLED) Webapp2 framework\e[00m - Same webapp dev env as Google App Engine"
-				else
-					echo -e "\e[1;31m 1. Webapp2 framework\e[00m - Same webapp dev env as Google App Engine"
-				fi
-				if [ -d /usr/local/lib/python2.7/site-packages/apiclient ]; then
-					echo -e "\e[1;32m 2. (INSTALLED) Google API Python Client\e[00m - The core Google products & OAuth2"
-				else
-					echo -e "\e[1;31m 2. Google API Python Client\e[00m - The core Google products & OAuth2"
-				fi
-				echo ""
-				echo -n " Enter selection: "
-				read selection
-
-				echo ""
-				case $selection in
-					1 ) clear
-						echo -e "\e[1;37mRunning: sudo pip install WebOb Paste webapp2. Ignore warnings.\e[00m"
-						echo ""
-						sudo pip install --upgrade WebOb Paste webapp2
-						filetool.sh -b
-						echo -e " \e[1;32mPress Enter \e[1;37mto return to main menu.\e[00m"; read line
-						;;				
-					2 ) clear
-						echo -e "\e[1;37mRunning: sudo pip install --upgrade google-api-python-client. Ignore warnings.\e[00m"
-						echo ""
-						sudo pip install --upgrade google-api-python-client
-						filetool.sh -b
-						echo -e " \e[1;32mPress Enter \e[1;37mto return to main menu.\e[00m"; read line
-						;;				
-				esac
+				echo "Pipulate already installed. Hit ESC for main menu."
             fi
             ;;
         * ) clear
