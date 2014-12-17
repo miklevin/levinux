@@ -32,19 +32,19 @@ until [ "$selection" = "0" ]; do
     echo ""
     echo -e "\e[1;37m MAKE YOUR CHOICE:"
     if [ ! -d /tmp/tcloop/python ]; then
-    echo -e "\e[1;34m 4 - Build Pipulate\e[00m <-- Just use the Free SEO and Social Media tools."
+    echo -e "\e[1;34m 1 - Build Pipulate\e[00m <-- Just use the Free SEO and Social Media tools."
     else
-		echo -e "\e[1;34m 4 - Get Libraries\e[00m  <-- Makes programming Google, Facebook, etc. easier."
+		echo -e "\e[1;34m 1 - Get Libraries\e[00m  <-- Makes programming Google, Facebook, etc. easier."
     fi
     echo -e "\e[1;31m 2 - Exit to Login\e[00m  <-- Better yet, \e[1;31mssh tc@localhost -p 2222\e[00m (\e[1;35mpassword: foo\e[00m)"
-    echo -e "\e[1;32m 1 - Learn more\e[00m     <-- Better yet, visit \e[1;32mhttp://localhost:8080\e[00m on your browser."
-    echo -e "\e[1;00m 3 - Shut down\e[00m      <-- Better than \"x'ing\" out of window to quit."
+    echo -e "\e[1;32m 3 - Learn more\e[00m     <-- Better yet, visit \e[1;32mhttp://localhost:8080\e[00m on your browser."
+    echo -e "\e[1;00m 4 - Shut down\e[00m      <-- Better than \"x'ing\" out of window to quit."
     echo ""
     echo -n " Enter selection: "
     read selection
     echo ""
     case $selection in
-        1 ) clear
+        3 ) clear
             echo -e "\e[1;36m WHAT'S GOING ON?\e[00m"
             echo " Congratulations, you are running the \"virtual computer\" known as Levinux."
             echo " That means this black window is a full-fledged modern Linux server capable of"
@@ -73,10 +73,10 @@ until [ "$selection" = "0" ]; do
         2 ) clear
             exit
             ;;
-        3 ) clear
+        4 ) clear
             poweroff
             ;;
-        4 ) clear
+        1 ) clear
             if [ ! -d /tmp/tcloop/python ]; then
                 sudo -u tc sh /home/tc/Pipulate.sh
             else
