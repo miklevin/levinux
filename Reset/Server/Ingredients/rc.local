@@ -78,7 +78,7 @@ until [ "$selection" = "0" ]; do
             ;;
         4 ) clear
             if [ ! -d /tmp/tcloop/python ]; then
-                sudo -u tc sh /home/tc/Python.sh
+                sudo -u tc sh /home/tc/Pipulate.sh
             else
 				echo ""
 				echo -e "\e[1;36m GET MORE CLIENT LIBRARIES\e[00m"

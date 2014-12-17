@@ -26,7 +26,9 @@ mkdir /home/tc/htdocs
 tftp -g -l /home/tc/htdocs/index.html -r /Ingredients/index.html 10.0.2.2
 tftp -g -l /home/tc/htdocs/style.css -r /Ingredients/style.css 10.0.2.2
 tftp -g -l /home/tc/htdocs/favicon.ico -r /Ingredients/favicon.ico 10.0.2.2
-tftp -g -l /home/tc/Python.sh -r /Ingredients/Python.sh 10.0.2.2
+tftp -g -l /home/tc/Pipulat.sh -r /Ingredients/Pipulate.sh 10.0.2.2
+sudo tr -d '\r' </home/tc/Pipulat.sh >/home/tc/Pipulate.sh
+sudo rm /home/tc/Pipulat.sh
 tftp -g -l /etc/dropbear/dropbear_dss_host_key -r /Ingredients/dropbear_dss_host_key 10.0.2.2
 tftp -g -l /etc/dropbear/dropbear_rsa_host_key -r /Ingredients/dropbear_rsa_host_key 10.0.2.2
 tftp -g -l /etc/rc.loca -r /Ingredients/rc.local 10.0.2.2
