@@ -29,7 +29,9 @@ tftp -g -l /home/tc/htdocs/favicon.ico -r /Ingredients/favicon.ico 10.0.2.2
 tftp -g -l /home/tc/Python.sh -r /Ingredients/Python.sh 10.0.2.2
 tftp -g -l /etc/dropbear/dropbear_dss_host_key -r /Ingredients/dropbear_dss_host_key 10.0.2.2
 tftp -g -l /etc/dropbear/dropbear_rsa_host_key -r /Ingredients/dropbear_rsa_host_key 10.0.2.2
-tftp -g -l /etc/rc.local -r /Ingredients/rc.local 10.0.2.2
+tftp -g -l /etc/rc.loca -r /Ingredients/rc.local 10.0.2.2
+sudo tr -d '\r' </etc/rc.loca >/etc/rc.local
+sudo rm /etc/rc.loca
 echo -e "etc/rc.local\netc/init.d/dropbear\netc/dropbear\nusr/bin/dbclient\nusr/bin/dropbear\nusr/bin/dropbearconvert\nusr/bin/dropbearkey\nusr/bin/scp\nusr/bin/ssh\nusr/sbin/dropbearmulti" >> /opt/.filetool.lst
 
 cd /tmp
