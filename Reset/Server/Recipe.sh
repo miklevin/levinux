@@ -37,7 +37,7 @@ sudo rm /etc/rc.loca
 echo -e "etc/rc.local\netc/init.d/dropbear\netc/dropbear\nusr/bin/dbclient\nusr/bin/dropbear\nusr/bin/dropbearconvert\nusr/bin/dropbearkey\nusr/bin/scp\nusr/bin/ssh\nusr/sbin/dropbearmulti" >> /opt/.filetool.lst
 
 cd /tmp
-echo "/etc/init.d/dropbear start" >> /opt/bootlocal.sh
+echo "/etc/init.d/dropbear start > /dev/null" >> /opt/bootlocal.sh
 echo "/usr/local/httpd/sbin/httpd -p 80 -h /home/tc/htdocs -u tc:staff" >> /opt/bootlocal.sh
 echo "export GIT_SSL_NO_VERIFY=true" >> /home/tc/.ashrc
 echo "sh /etc/rc.local" >> /opt/bootsync.sh
