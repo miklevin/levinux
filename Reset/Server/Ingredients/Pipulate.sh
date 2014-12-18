@@ -31,6 +31,7 @@ git clone https://github.com/miklevin/pipulate.git > /dev/null
 echo "usr/local/lib/python2.7/site-packages/" >> /opt/.filetool.lst
 head -n -1 /opt/bootsync.sh > /opt/bootsync2.sh
 mv /opt/bootsync2.sh /opt/bootsync.sh
+chmod a+x /opt/bootsync.sh
 cd /home/tc/pipulate/
 nohup python pipulate.py > /dev/null &
 echo -e "cd /home/tc/pipulate/\nnohup python pipulate.py > /dev/null &\nsh /etc/rc.local" >> /opt/bootsync.sh
