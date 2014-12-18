@@ -33,7 +33,7 @@ head -n -1 /opt/bootsync.sh > /opt/bootsync2.sh
 mv /opt/bootsync2.sh /opt/bootsync.sh
 cd /home/tc/pipulate/
 nohup python pipulate.py > /dev/null &
-echo -e "cd /home/tc/pipulate/\nnohup python pipulate.py > /dev/null&\nsh /etc/rc.local" >> /opt/bootsync.sh
+echo -e "cd /home/tc/pipulate/\nnohup python pipulate.py > /dev/null &\nsh /etc/rc.local" >> /opt/bootsync.sh
 filetool.sh -b >> /dev/null
 exit
 
