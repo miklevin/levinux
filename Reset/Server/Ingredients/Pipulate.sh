@@ -9,9 +9,11 @@ echo "               |___/                                     |___/       "
 echo ""
 echo "      Please have patience while Pipulate is installed, along with its"
 echo "          dependencies. When complete, visit http://localhost:8888"
+echo "------------------------------------------------------------------------------"
 echo ""
-echo "-------------------------------------------------------------------------------"
-
+if [ -e /tmp/firstboot.txt ]; then
+	sudo rm /tmp/firstboot.txt > /dev/null
+fi
 # everything necessary to make it a development platform
 echo -e "\e[1;37mInstalling Python (and all its dependencies)...\e[0;37m"
 tce-load -wi python > /dev/null
