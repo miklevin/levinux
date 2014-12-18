@@ -17,17 +17,23 @@ echo -e "\e[1;37m"
 tce-load -wi python > /dev/null
 tce-load -wi python-distribute > /dev/null
 tce-load -wi git > /dev/null
-sudo easy_install pygreen
-sudo easy_install gspread
-sudo easy_install flask_wtf
+echo "easy_install flask..."
+sudo easy_install flask > /dev/null 2>&1
+echo "easy_install flask_wtf..."
+sudo easy_install flask_wtf > /dev/null 2>&1
+echo "easy_install gspread..."
+sudo easy_install gspread > /dev/null 2>&1
 cd /home/tc/
-git clone https://github.com/miklevin/pipulate.git
+echo "clone https://github.com/miklevin/pipulate.git..."
+git clone https://github.com/miklevin/pipulate.git > /dev/null
 
 # Back up things installed with Python-distribute easy_install
 echo "usr/local/lib/python2.7/site-packages/" >> /opt/.filetool.lst
+head -n -1 /opt/bootsync.sh > /opt/bootsync2.sh
+mv /opt/bootsync2.sh /opt/bootsync.sh
 cd /home/tc/pipulate/
-nohup python pipulate.py &
-echo -e "cd /home/tc/pipulate/\nnohup python pipulate.py&" >> /opt/bootsync.sh
-filetool.sh -b
+nohup python pipulate.py > /dev/null &
+echo -e "cd /home/tc/pipulate/\nnohup python pipulate.py > /dev/null&\nsh /etc/rc.local" >> /opt/bootsync.sh
+filetool.sh -b >> /dev/null
 exit
 
