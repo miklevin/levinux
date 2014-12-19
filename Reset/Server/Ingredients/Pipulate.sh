@@ -28,7 +28,7 @@ sudo easy_install gspread 2> /dev/null
 cd /home/tc/
 echo -e "\e[1;37mCloning Pipulate from Github...\e[0;37m"
 echo "clone https://github.com/miklevin/pipulate.git..."
-git clone https://github.com/miklevin/pipulate.git > /dev/null
+git clone https://github.com/miklevin/pipulate.git
 
 # Back up things installed with Python-distribute easy_install
 echo "usr/local/lib/python2.7/site-packages/" >> /opt/.filetool.lst
