@@ -8,7 +8,7 @@ echo "        |_|    \__, |\__|_| |_|\___/|_| |_|   \___/\/    \__, |_|\__|"
 echo "               |___/                                     |___/       "
 echo ""
 echo "      Please have patience while Pipulate is installed, along with its"
-echo "          dependencies. When complete, visit http://localhost:8888"
+echo -e "          dependencies. When complete, visit \e[1;37mhttp://localhost:8888\e[1;34m"
 echo "------------------------------------------------------------------------------"
 echo ""
 if [ -e /tmp/firstboot.txt ]; then
@@ -32,6 +32,7 @@ git clone https://github.com/miklevin/pipulate.git
 
 # Back up things installed with Python-distribute easy_install
 echo "usr/local/lib/python2.7/site-packages/" >> /opt/.filetool.lst
+mkdir /home/tc/uploads
 cd /home/tc/pipulate/
 nohup python pipulate.py > /dev/null &
 echo -e "cd /home/tc/pipulate/\nsudo nohup python pipulate.py > /dev/null &" >> /opt/bootlocal.sh
