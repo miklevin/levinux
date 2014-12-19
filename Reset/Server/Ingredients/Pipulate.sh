@@ -8,7 +8,7 @@ echo "        |_|    \__, |\__|_| |_|\___/|_| |_|   \___/\/    \__, |_|\__|"
 echo "               |___/                                     |___/       "
 echo ""
 echo "      Please have patience while Pipulate is installed, along with its"
-echo -e "          dependencies. When complete, visit \e[1;37mhttp://localhost:8888\e[1;34m"
+echo -e "          dependencies. When complete, visit \e[00mhttp://localhost:\e[1;37m8888\e[1;34m"
 echo "------------------------------------------------------------------------------"
 echo ""
 if [ -e /tmp/firstboot.txt ]; then
