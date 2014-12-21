@@ -57,5 +57,9 @@ cd /home/tc
 echo -e "foo\nfoo" | passwd tc > /dev/null
 echo -e "etc/passwd\netc/shadow" >> /opt/.filetool.lst
 
+if [ -e /tc/home/.ash_history ]; then
+  rm /tc/home.ash_history
+fi
+
 filetool.sh -b >> /dev/null
 

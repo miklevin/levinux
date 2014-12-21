@@ -144,9 +144,13 @@ until [ "$selection" = "0" ]; do
             echo ""
             echo ""
             echo ""
-            echo -n -e "\e[1;32mPress Enter \e[1;37mto return to main menu.\e[00m"; read line
+            echo -en "\e[1;32mPress Enter \e[1;37mto return to main menu.\e[00m"; read line
             ;;
         2 ) clear
+            echo -e "Congratulations, you have chosen the \e[1;31mred pill\e[00m and have made a good choice."
+            echo -e "On the prompt you're about to see, username is \e[1;37mtc\e[00m and password is \e[1;37mfoo\e[00m."
+            echo ""
+            read -p "Press Enter to proceed..."
             exit
             ;;
         4 ) clear
