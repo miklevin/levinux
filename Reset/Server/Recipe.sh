@@ -19,10 +19,20 @@ echo -e "\e[00;36m--------------------------------------------------------------
 echo ""
 
 #Set up an ssh and sftp server (allows you to get in from the host machine)
-sudo -u tc tce-load -wi dropbear > /dev/null
-sudo -u tc tce-load -wi busybox-httpd > /dev/null
-mkdir /home/tc/htdocs
 
+# sudo -u tc tce-load -wi dropbear > /dev/null
+# sudo -u tc tce-load -wi busybox-httpd > /dev/null
+
+# Alternative to tce-load to install ssh and httpd without online connection.
+tftp -g -l /mnt/sdc1/tce/optional/dropbear.tcz -r /Ingredients/dropbear.tcz 10.0.2.2
+tftp -g -l /mnt/sdc1/tce/optional/dropbear.tcz.md5.txt -r /Ingredients/dropbear.tcz.md5.txt 10.0.2.2
+tftp -g -l /mnt/sdc1/tce/optional/busybox-httpd.tcz -r /Ingredients/busybox-httpd.tcz 10.0.2.2
+tftp -g -l /mnt/sdc1/tce/optional/busybox-httpd.tcz.md5.txt -r /Ingredients/busybox-httpd.tcz.md5.txt 10.0.2.2
+echo -e "dropbear.tcz\nbusybox-httpd.tcz" >> /mnt/sdc1/tce/onboot.lst
+sudo -u tc tce-load -i dropbear > /dev/null
+sudo -u tc tce-load -i busybox-httpd > /dev/null
+
+mkdir /home/tc/htdocs
 tftp -g -l /home/tc/htdocs/index.html -r /Ingredients/index.html 10.0.2.2
 tftp -g -l /home/tc/htdocs/style.css -r /Ingredients/style.css 10.0.2.2
 tftp -g -l /home/tc/htdocs/favicon.ico -r /Ingredients/favicon.ico 10.0.2.2
