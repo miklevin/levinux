@@ -63,4 +63,7 @@ fi
 
 filetool.sh -b >> /dev/null
 
-echo -e "echo \"Welcome seeker. Type sudo poweroff to quit or sh /etc/rc.local to get menu.\"" >> /home/tc/.profile
+echo -e "echo \"I'm trying to free your mind, but I can only show you the door. You have walked\"" >> /home/tc/.profile
+echo -e "echo \"through by logging into a terminal, but now, you must experiment. Get back the\"" >> /home/tc/.profile
+echo -e "echo \"menu with \e[1;37msh /etc/rc.local\e[00m. Go google the \e[1;37mls\e[00m and \e[1;37mcd\e[00m commands. Also, you may get\"" >> /home/tc/.profile
+echo -e "echo \"privileged root access by typing \e[1;37msudo su\e[00m, and come back here by typing \e[1;37mexit\e[00m.\n\"" >> /home/tc/.profile
