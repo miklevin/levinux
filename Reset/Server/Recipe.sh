@@ -63,3 +63,4 @@ fi
 
 filetool.sh -b >> /dev/null
 
+echo -e "echo \"Welcome seeker. Type sudo poweroff to quit or sh /etc/rc.local to get menu.\"" >> /home/tc/.profile
