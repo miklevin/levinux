@@ -66,4 +66,9 @@ filetool.sh -b >> /dev/null
 echo -e "echo \"I'm trying to free your mind, but I can only show you the door. You have walked\"" >> /home/tc/.profile
 echo -e "echo \"through by logging into a terminal, but now, you must experiment. Get back the\"" >> /home/tc/.profile
 echo -e "echo \"menu with \e[1;37msh /etc/rc.local\e[00m. Go google the \e[1;37mls\e[00m and \e[1;37mcd\e[00m commands. Also, you may get\"" >> /home/tc/.profile
-echo -e "echo \"privileged root access by typing \e[1;37msudo su\e[00m, and come back here by typing \e[1;37mexit\e[00m.\n\"" >> /home/tc/.profile
+echo -e "echo \"privileged root access by typing \e[1;37msudo su\e[00m, and come back here by typing \e[1;37mexit\e[00m or\"" >> /home/tc/.profile
+echo -e "echo \"or shut down the VM by typing \e[1;37mpoweroff\e[00m while root. You can't imagine the lengths\"" >> /home/tc/.profile
+echo -e "echo \"old admins went to in the past to keep you from ever walking through this door.\"" >> /home/tc/.profile
+echo -e "echo \"\n\"" >> /home/tc/.profile
+
+
