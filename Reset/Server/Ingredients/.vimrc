@@ -32,4 +32,4 @@ set clipboard+=unnamed
 set background=dark
 set mat=5
 set winheight=15
-
+set nocp

@@ -15,6 +15,7 @@ echo "                 Master the short-stack: Python, vim & git"
 echo -e "\e[1;37m"
 echo " A one-time \"Recipe\" is being run to provide SSH login and a small webserver."
 echo "          Please be patient while your server finishes cooking..."
+echo -e "                \e[1;37mCtrl+S\e[00;36m freezes boot and \e[1;37mCtrl+Q\e[00;36m continues" 
 echo -e "\e[00;36m-------------------------------------------------------------------------------\e[00m"
 echo ""
 
@@ -34,6 +35,7 @@ sudo -u tc tce-load -i busybox-httpd > /dev/null
 
 mkdir /home/tc/htdocs
 tftp -g -l /home/tc/htdocs/index.html -r /Ingredients/index.html 10.0.2.2
+sudo chown tc /home/tc/htdocs/index.html
 tftp -g -l /home/tc/htdocs/style.css -r /Ingredients/style.css 10.0.2.2
 tftp -g -l /home/tc/htdocs/favicon.ico -r /Ingredients/favicon.ico 10.0.2.2
 tftp -g -l /home/tc/Pipulat.sh -r /Ingredients/Pipulate.sh 10.0.2.2
@@ -42,6 +44,7 @@ sudo rm /home/tc/Pipulat.sh
 tftp -g -l /home/tc/drinkm.sh -r /Ingredients/drinkme.sh 10.0.2.2
 sudo tr -d '\r' </home/tc/drinkm.sh >/home/tc/drinkme.sh
 sudo rm /home/tc/drinkm.sh
+sudo chown tc /home/tc/drinkme.sh
 sudo chmod a+x /home/tc/drinkme.sh
 tftp -g -l /etc/dropbear/dropbear_dss_host_key -r /Ingredients/dropbear_dss_host_key 10.0.2.2
 tftp -g -l /etc/dropbear/dropbear_rsa_host_key -r /Ingredients/dropbear_rsa_host_key 10.0.2.2
@@ -65,7 +68,7 @@ if [ -e /tc/home/.ash_history ]; then
   rm /tc/home.ash_history
 fi
 
-filetool.sh -b >> /dev/null
+filetool.sh -b
 
 echo -e "echo \"\e[1;33mI'm trying to free your mind, but I can only show you the door.\e[00m You have walked\"" >> /home/tc/.profile
 echo -e "echo \"through by logging into a \e[1;31mTerminal\e[00m, but now, you must experiment. Get back the\"" >> /home/tc/.profile

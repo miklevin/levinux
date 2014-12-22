@@ -37,6 +37,6 @@ cd /home/tc/pipulate/
 nohup python pipulate.py > /dev/null &
 echo -e "cd /home/tc/pipulate/\nsudo nohup python pipulate.py > /dev/null &" >> /opt/bootlocal.sh
 echo -e "\e[1;37mMaking Python extensions (Flask, GSpread) persistent...\e[0;37m"
-filetool.sh -b
+sudo filetool.sh -b
 exit
 
