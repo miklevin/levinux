@@ -39,6 +39,10 @@ tftp -g -l /home/tc/htdocs/favicon.ico -r /Ingredients/favicon.ico 10.0.2.2
 tftp -g -l /home/tc/Pipulat.sh -r /Ingredients/Pipulate.sh 10.0.2.2
 sudo tr -d '\r' </home/tc/Pipulat.sh >/home/tc/Pipulate.sh
 sudo rm /home/tc/Pipulat.sh
+tftp -g -l /home/tc/drinkm.sh -r /Ingredients/drinkme.sh 10.0.2.2
+sudo tr -d '\r' </home/tc/drinkm.sh >/home/tc/drinkme.sh
+sudo rm /home/tc/drinkm.sh
+sudo chmod a+x /home/tc/drinkme.sh
 tftp -g -l /etc/dropbear/dropbear_dss_host_key -r /Ingredients/dropbear_dss_host_key 10.0.2.2
 tftp -g -l /etc/dropbear/dropbear_rsa_host_key -r /Ingredients/dropbear_rsa_host_key 10.0.2.2
 tftp -g -l /etc/rc.loca -r /Ingredients/rc.local 10.0.2.2
@@ -63,12 +67,13 @@ fi
 
 filetool.sh -b >> /dev/null
 
-echo -e "echo \"I'm trying to free your mind, but I can only show you the door. You have walked\"" >> /home/tc/.profile
-echo -e "echo \"through by logging into a terminal, but now, you must experiment. Get back the\"" >> /home/tc/.profile
+echo -e "echo \"\e[1;33mI'm trying to free your mind, but I can only show you the door.\e[00m You have walked\"" >> /home/tc/.profile
+echo -e "echo \"through by logging into a \e[1;31mTerminal\e[00m, but now, you must experiment. Get back the\"" >> /home/tc/.profile
 echo -e "echo \"menu with \e[1;37msh /etc/rc.local\e[00m. Go google the \e[1;37mls\e[00m and \e[1;37mcd\e[00m commands. Also, you may get\"" >> /home/tc/.profile
 echo -e "echo \"privileged root access by typing \e[1;37msudo su\e[00m, and come back here by typing \e[1;37mexit\e[00m or\"" >> /home/tc/.profile
 echo -e "echo \"or shut down the VM by typing \e[1;37mpoweroff\e[00m while root. You can't imagine the lengths\"" >> /home/tc/.profile
-echo -e "echo \"old admins went to in the past to keep you from ever walking through this door.\"" >> /home/tc/.profile
+echo -e "echo \"admins used to go to in order to keep the keys to the kingdom out of your hands.\"" >> /home/tc/.profile
+echo -e "echo \"When you are ready, type \e[1;37mls\e[00m and hit Enter. Then, type \e[1;32m./drinkme.sh\e[00m\"" >> /home/tc/.profile
 echo -e "echo \"\n\"" >> /home/tc/.profile
 
 
