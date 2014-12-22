@@ -1,4 +1,7 @@
 clear
+selection=
+until [ "$selection" = "0" ]; do
+echo "VIM WILL HOW DEEP THIS RABBIT HOLE GOES"
 echo "Congratulations! You just executed a shell script by typing its name. The dot"
 echo "slash before the filename meant to look for the file in your current directory."
 echo "The filename was colored green because it was executable. Otherwise, you would"
@@ -18,8 +21,20 @@ echo "from the start menu, or type sh ./Pipulate.sh after you're done reading th
 echo "We also need to install vim, which is a very powerful text editor that will"
 echo "serve you well for the rest of your life. The original version known as vi is"
 echo "actually built into almost every Linux amd Unix installation, so learning them"
-echo "will let you work with text files on almost any system you ever sit down at."
+echo "will let you work with text files on almost any system you ever encounter."
 echo "Did I mention a rabbit hole? Well, everything in your adventures so far has"
 echo "been quite easy in comparison to learning vim. But believe me, it is worth it."
 echo ""
-echo "To install vim now, press 1 and then Enter. To exit, just press Enter."
+echo -n "Enter 1 to Exit or 2 to install vim: "
+read selection
+    case $selection in
+        1 ) clear
+            exit
+            ;;
+        2 ) clear
+            echo "I would install vim now if this script were finished.."
+            exit
+            ;;
+    esac
+done
+exit 0
