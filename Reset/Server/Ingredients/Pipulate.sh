@@ -23,6 +23,8 @@ tce-load -wi git > /dev/null
 echo -e "\e[1;37mInstalling Flask (and all its dependencies)...\e[0;37m"
 sudo easy_install flask 2> /dev/null
 sudo easy_install flask_wtf 2> /dev/null
+echo -e "\e[1;37mInstalling Requests (and all its dependencies)...\e[0;37m"
+sudo easy_install requests 2> /dev/null
 echo -e "\e[1;37mInstalling GSpread...\e[0;37m"
 sudo easy_install gspread 2> /dev/null
 cd /home/tc/
@@ -36,7 +38,7 @@ mkdir /home/tc/uploads
 cd /home/tc/pipulate/
 nohup python pipulate.py > /dev/null &
 echo -e "cd /home/tc/pipulate/\ngit pull -q\nsudo nohup python pipulate.py > /dev/null &" >> /opt/bootlocal.sh
-echo -e "\e[1;37mMaking Python extensions (Flask, GSpread) persistent...\e[0;37m"
+echo -e "\e[1;37mMaking Python extensions persistent...\e[0;37m"
 sudo filetool.sh -b
 exit
 

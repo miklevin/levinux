@@ -15,7 +15,7 @@ echo "                 Master the short-stack: Python, vim & git"
 echo -e "\e[1;37m"
 echo " A one-time \"Recipe\" is being run to provide SSH login and a small webserver."
 echo "          Please be patient while your server finishes cooking..."
-echo -e "                \e[1;37mCtrl+S\e[00;36m freezes boot and \e[1;37mCtrl+Q\e[00;36m continues" 
+echo -e "                \e[1;33mCtrl+S\e[1;37m freezes boot and \e[1;33mCtrl+Q\e[1;37m continues" 
 echo -e "\e[00;36m-------------------------------------------------------------------------------\e[00m"
 echo ""
 

@@ -52,7 +52,7 @@ read selection
             echo "usr/local/share/vim/vim72/colors/blackboard.vim" >> /opt/.filetool.lst
             sudo filetool.sh -b
             clear
-            echo "vim installed. For the next chapter of Levinux, visit: http://goo.gl/YkULCL"
+            echo "vim installed. For the next chapter of Levinux, visit: http://levinux.com"
             exit
             ;;
     esac
