@@ -29,6 +29,7 @@ echo -en "\e[1;32mEnter \e[1;37m1\e[1;32m to Exit or \e[1;37m2\e[1;32m to instal
 read selection
     case $selection in
         1 ) clear
+            echo -e "You can get back to the menu with \e[1;37msh /etc/rc.local\e[00m"
             exit
             ;;
         2 ) clear
