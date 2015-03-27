@@ -50,7 +50,7 @@ read selection
             echo "usr/local/lib/python2.7/site-packages/" >> /opt/.filetool.lst
             mkdir /home/tc/uploads
             cd /home/tc/pipulate/
-            nohup python pipulate.py > /dev/null &
+            nohup python webpipulate.py > /dev/null &
             echo -e "cd /home/tc/pipulate/\ngit pull -q\nsudo nohup python pipulate.py > /dev/null &" >> /opt/bootlocal.sh
             echo -e "\e[1;37mMaking Python extensions persistent...\e[0;37m"
             sudo filetool.sh -b
