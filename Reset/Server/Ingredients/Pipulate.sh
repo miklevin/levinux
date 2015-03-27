@@ -51,7 +51,8 @@ read selection
             mkdir /home/tc/uploads
             cd /home/tc/pipulate/
             nohup python webpipulate.py > /dev/null &
-            echo -e "cd /home/tc/pipulate/\ngit pull -q\nsudo nohup python webpipulate.py > /dev/null &" >> /opt/bootlocal.sh
+            echo $! > pid.txt
+            echo -e "cd /home/tc/pipulate/\ngit pull -q\nsudo nohup python webpipulate.py > /dev/null\necho \$! > pid.txt &" >> /opt/bootlocal.sh
             echo -e "\e[1;37mMaking Python extensions persistent...\e[0;37m"
             sudo filetool.sh -b
             exit
