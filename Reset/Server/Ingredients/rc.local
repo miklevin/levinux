@@ -155,6 +155,7 @@ until [ "$selection" = "0" ]; do
             ;;
         4 ) clear
             poweroff
+            exit
             ;;
         1 ) clear
             if [ ! -d /tmp/tcloop/python ]; then
