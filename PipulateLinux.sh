@@ -1,6 +1,11 @@
 #!/bin/bash
 
-resize -s 25 80
+if command -v resize >/dev/null; then
+	resize -s 25 80 >/dev/null
+else
+	echo "Resize is not installed.  Levinux is best used in a 25x80 terminal." 2>&1
+fi
+
 cd ./Pipulate.app/Contents/MacOS/
 
 ./qemu-system-i386 -curses \
