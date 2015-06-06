@@ -29,3 +29,14 @@ Download the zip, unarchive it and...
 2. Mac OS X may require you to right-click or Control-click and open.
 3. Ubuntu 14.04 Nautilus / Edit / Preferences / Behavior / Executable Text
    Files, "Select Ask Each Time"
+
+## Including additional packages
+
+Inclusion of additional packages is simple, but requires a few steps be taken to optimize and set up.
+
+1. Download the package and any dependencies from http://distro.ibiblio.org/tinycorelinux/6.x/x86/tcz/ (dependencies are listed in the {package}.tcz.dep file).
+2. Add the downloaded `.tcz` files to `/Reset/Server/Ingredients`
+3. Run `tftp -g -l /mnt/sdc1/tce/optional/package.tcz -r /Ingredients/package.tcz 10.0.2.2` where "package" is the name of the package (an example can be found in `/Reset/Server/Recipe.sh`).
+4. Run `sudo -u tc tce-load -i package` to load the package.  Output can be directed to /dev/null for silent installation (see `/Reset/Server/Recipe.sh` for example).
+
+Steps 3 and 4 can be included in `/Reset/Server/Recipe.sh` or an external script that can be called in `Recipe.sh` or at any time after.
