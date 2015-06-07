@@ -8,7 +8,7 @@
                                Beta Version 3.0
 
                      A Re-spin of Tiny Core Linux and QEMU
-                   ~20 MB, runs from Dropbox and USB Drives
+                   ~25 MB, runs from Dropbox and USB Drives
                     and requires no install or Admin rights
                     Also is sort of a game challenging you
                       to learn Linux, Python, vim and git
