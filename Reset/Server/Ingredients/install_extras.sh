@@ -6,4 +6,4 @@ while read package; do
 	[ -z "$package" ] && continue
 	tftp -g -l /mnt/sdc1/tce/optional/$package.tcz -r /Ingredients/Custom/$package.tcz 10.0.2.2
 	sudo -u tc tce-load -i $package > /dev/null
-done < extras.lst
+done < /home/tc/.extras/extras.lst

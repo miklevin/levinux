@@ -58,7 +58,7 @@ mkdir /home/tc/.extras
 tftp -g -l /home/tc/.extras/extras.lst -r /Ingredients/extras.lst 10.0.2.2
 tftp -g -l /home/tc/.extras/install_extras.sh -r /Ingredients/install_extras.sh 10.0.2.2
 chmod +x /home/tc/.extras/install_extras.sh
-# sudo /home/tc/.extras/install_extras.sh
+sudo /home/tc/.extras/install_extras.sh
 
 cd /tmp
 echo "/etc/init.d/dropbear start > /dev/null" >> /opt/bootlocal.sh
