@@ -1,0 +1,10 @@
+# List packages without their .tcz extension.
+# It is best to load dependencies first.
+
+# Example - lynx command-line web browser
+# Uncomment the packages below to install lynx
+#libidn
+#ncurses
+#lynx
+
+# END OF FILE #

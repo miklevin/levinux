@@ -53,6 +53,13 @@ sudo tr -d '\r' </etc/rc.loca >/etc/rc.local
 sudo rm /etc/rc.loca
 echo -e "etc/rc.local\netc/init.d/dropbear\netc/dropbear\nusr/bin/dbclient\nusr/bin/dropbear\nusr/bin/dropbearconvert\nusr/bin/dropbearkey\nusr/bin/scp\nusr/bin/ssh\nusr/sbin/dropbearmulti" >> /opt/.filetool.lst
 
+# Grab additional files for easy customized builds
+mkdir /home/tc/.extras
+tftp -g -l /home/tc/.extras/extras.lst -r /Ingredients/extras.lst 10.0.2.2
+tftp -g -l /home/tc/.extras/install_extras.sh -r /Ingredients/install_extras.sh 10.0.2.2
+chmod +x /home/tc/.extras/install_extras.sh
+sudo /home/tc/.extras/install_extras.sh
+
 cd /tmp
 echo "/etc/init.d/dropbear start > /dev/null" >> /opt/bootlocal.sh
 echo "/usr/local/httpd/sbin/httpd -p 80 -h /home/tc/htdocs -u tc:staff" >> /opt/bootlocal.sh
