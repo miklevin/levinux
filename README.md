@@ -41,3 +41,14 @@ Inclusion of additional packages is simple, but requires a few steps be taken to
 **Optional:** `/Reset/Server/Ingredients/install_extras.sh` can be duplicated and point at a file other than `extras.lst`.  This can allow for different packages to be grouped and have group output silenced by pointing the output to `/dev/null`
 
 **Note:** Ensure you do not write below the last line in the `extras.lst` file
+
+## Upgrade Instructions
+Generally speaking, Levinux will use the most recent version of TinyCore Linux available.  If it is out of date, it will be upgraded in a timely manner.  For the time being, this upgrade will be performed by @miklevin himself to ensure the validity of the image.  
+
+That being said, if you want to upgrade on your own, the process is simple:
+
+1. Download the latest core-current.iso from http://distro.ibiblio.org/tinycorelinux/downloads.html Use the ~9MB file labeled Core.
+2. Open the .iso image and go into the boot directory. Some versions of Windows may require special software for this.
+3. Copy the files named core.gz and vmlinuz into the MacOS directory and overwrite the existing versions.
+
+That's it.  Start the levinux application and it should show the version number.
