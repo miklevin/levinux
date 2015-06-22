@@ -38,19 +38,16 @@ tftp -g -l /home/tc/htdocs/index.html -r /Ingredients/index.html 10.0.2.2
 sudo chown tc /home/tc/htdocs/index.html
 tftp -g -l /home/tc/htdocs/style.css -r /Ingredients/style.css 10.0.2.2
 tftp -g -l /home/tc/htdocs/favicon.ico -r /Ingredients/favicon.ico 10.0.2.2
-tftp -g -l /home/tc/Pipulat.sh -r /Ingredients/Pipulate.sh 10.0.2.2
-sudo tr -d '\r' </home/tc/Pipulat.sh >/home/tc/Pipulate.sh
-sudo rm /home/tc/Pipulat.sh
-tftp -g -l /home/tc/drinkm.sh -r /Ingredients/drinkme.sh 10.0.2.2
-sudo tr -d '\r' </home/tc/drinkm.sh >/home/tc/drinkme.sh
-sudo rm /home/tc/drinkm.sh
+tftp -g -l /home/tc/Pipulate.sh -r /Ingredients/Pipulate.sh 10.0.2.2
+sudo sed -i 's/\r//' /home/tc/Pipulate.sh
+tftp -g -l /home/tc/drinkme.sh -r /Ingredients/drinkme.sh 10.0.2.2
+sudo sed -i 's/\r//' /home/tc/drinkme.sh
 sudo chown tc /home/tc/drinkme.sh
 sudo chmod a+x /home/tc/drinkme.sh
 tftp -g -l /etc/dropbear/dropbear_dss_host_key -r /Ingredients/dropbear_dss_host_key 10.0.2.2
 tftp -g -l /etc/dropbear/dropbear_rsa_host_key -r /Ingredients/dropbear_rsa_host_key 10.0.2.2
-tftp -g -l /etc/rc.loca -r /Ingredients/rc.local 10.0.2.2
-sudo tr -d '\r' </etc/rc.loca >/etc/rc.local
-sudo rm /etc/rc.loca
+tftp -g -l /etc/rc.local -r /Ingredients/rc.local 10.0.2.2
+sudo sed -i 's/\r//' /etc/rc.local
 echo -e "etc/rc.local\netc/init.d/dropbear\netc/dropbear\nusr/bin/dbclient\nusr/bin/dropbear\nusr/bin/dropbearconvert\nusr/bin/dropbearkey\nusr/bin/scp\nusr/bin/ssh\nusr/sbin/dropbearmulti" >> /opt/.filetool.lst
 
 # Grab additional files for easy customized builds
@@ -71,8 +68,8 @@ cd /home/tc
 echo -e "foo\nfoo" | passwd tc > /dev/null
 echo -e "etc/passwd\netc/shadow" >> /opt/.filetool.lst
 
-if [ -e /tc/home/.ash_history ]; then
-  rm /tc/home/.ash_history
+if [ -e ~/.ash_history ]; then
+  rm ~/.ash_history
 fi
 
 filetool.sh -b
