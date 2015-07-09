@@ -6,7 +6,6 @@
                    |_____|\___| \_/  |_|_| |_|\__,_/_/\_\
 
                                Beta Version 3.0
-       [Join the Levinux Team on Slack](http://goo.gl/forms/mx6eVSOINv)                               
 
                      A Re-spin of Tiny Core Linux and QEMU
                    ~25 MB, runs from Dropbox and USB Drives
@@ -15,6 +14,7 @@
                       to learn Linux, Python, vim and git
 
 --------------------------------------------------------------------------------
+[Join the Levinux Team on Slack](http://goo.gl/forms/mx6eVSOINv)                               
 
 # Installation Instructions
 
