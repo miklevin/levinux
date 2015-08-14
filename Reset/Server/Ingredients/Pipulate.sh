@@ -45,16 +45,15 @@ read selection
             echo -e "\e[1;37mCloning Pipulate from Github...\e[0;37m"
             echo "clone https://github.com/miklevin/pipulate.git..."
             git clone https://github.com/miklevin/pipulate.git
-
             # Back up things installed with Python-distribute easy_install
             echo "usr/local/lib/python2.7/site-packages/" >> /opt/.filetool.lst
             mkdir /home/tc/uploads
             cd /home/tc/pipulate/
-            nohup python webpipulate.py > /dev/null &
-            echo $! > pid.txt
+            # echo $! > pid.txt
             echo -e "cd /home/tc/pipulate/\ngit pull -q\nsudo nohup python webpipulate.py > /dev/null\necho \$! > pid.txt &" >> /opt/bootlocal.sh
             echo -e "\e[1;37mMaking Python extensions persistent...\e[0;37m"
             sudo filetool.sh -b
+            python webpipulate.py
             exit
             ;;
     esac
