@@ -13,9 +13,17 @@
                     Also is sort of a game challenging you
                       to learn Linux, Python, vim and git
 
---------------------------------------------------------------------------------
-[Join the Levinux Team on Slack](http://goo.gl/forms/mx6eVSOINv)                               
+# What Is This Project About?
+The [micro Linux distribution](http://mikelev.in/ux/) known as Levinux
+(download ~25 MB) is a tiny virtual Linux server that runs from USB or Dropbox
+with a double-click (no install or admin rights required) on Macs, Windows or
+Linux PCs—making it the perfect learning environment and launching-off point.
 
+Think of it as an introduction to old-skool—more relevant now then ever as
+Linux/Unix gets embedded into everything, with an emphasis on an actual running
+Python/Flask web app that you can tear apart and do whatever you want with.
+
+--------------------------------------------------------------------------------
 # Installation Instructions
 
 Download the zip, unarchive it and...
