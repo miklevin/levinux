@@ -12,6 +12,7 @@ introduction to generic nix systems.
 Levinux combines with another Github project of mine called Pipulate, so that
 you can see a live Python/Flask app running from http://localhost:8888. There
 will be a minimal (busybox) webserver on http://localhost:8080 after first run.
+Levinux is the remix of QEMU and Tiny Core Linux that needed to happen.
 
 --------------------------------------------------------------------------------
 # Installation Instructions
