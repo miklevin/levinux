@@ -17,11 +17,13 @@
 The [micro Linux distribution](http://mikelev.in/ux/) known as Levinux
 (download ~25 MB) is a tiny virtual Linux server that runs from USB or Dropbox
 with a double-click (no install or admin rights required) on Macs, Windows or
-Linux PCs—making it the perfect learning environment and launching-off point.
+Linux PCs—making it the perfect learning environment and launching-off point
+for other projects, requiring JeOS boxes or a quick nix introcuction.
 
 Think of it as an introduction to old-skool—more relevant now then ever as
 Linux/Unix gets embedded into everything, with an emphasis on an actual running
-Python/Flask web app that you can tear apart and do whatever you want with.
+of another Python/Flask project of mine, called Pipulate, that you can tear
+apart and swap-out with your own projects and modify to your liking.
 
 --------------------------------------------------------------------------------
 # Installation Instructions
