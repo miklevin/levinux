@@ -1,6 +1,6 @@
 #!/bin/sh
 set +e
-cd ../Pipulate.app/Contents/MacOS
+cd ../Levinux.app/Contents/MacOS
 mv ./home.qcow ../../../Reset/home-backup.qcow
 rm ./opt.qcow
 rm ./tce.qcow
