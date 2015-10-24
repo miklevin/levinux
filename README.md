@@ -1,17 +1,4 @@
---------------------------------------------------------------------------------
-                    _                 _
-                   | |     _____   __(_)_ __  _   ___  __
-                   | |    / _ \ \ / /| | '_ \| | | \ \/ /
-                   | |___|  __/\ V / | | | | | |_| |>  <
-                   |_____|\___| \_/  |_|_| |_|\__,_/_/\_\
-
-                               Beta Version 3.0
-
-                     A Re-spin of Tiny Core Linux and QEMU
-                   ~25 MB, runs from Dropbox and USB Drives
-                    and requires no install or Admin rights
-                    Also is sort of a game challenging you
-                      to learn Linux, Python, vim and git
+<img src="http://i0.wp.com/mikelev.in/wp-content/uploads/2012/01/Micro-Linux-Education.png?resize=423%2C423">
 
 # What Is This Project About?
 The [micro Linux distribution](http://mikelev.in/ux/) known as Levinux
