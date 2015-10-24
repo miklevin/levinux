@@ -1,5 +1,5 @@
 # Levinux - A Micro Linux for Education
-<div style="width: 100%"><a href="http://mikelev.in/ux/" title="Micro Linux for Education" style="text-align: center"><img src="http://levinux.com/micro-linux-education.png" alt="Micro Linux for Education" /></a></div>
+<a href="http://mikelev.in/ux/"><img src="http://levinux.com/micro-linux-education.png" alt="Micro Linux for Education" /></a>
 
 ## What Is This Project About?
 The [micro Linux distribution](http://mikelev.in/ux/) known as Levinux
