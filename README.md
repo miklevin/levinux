@@ -1,6 +1,7 @@
-<img src="http://i0.wp.com/mikelev.in/wp-content/uploads/2012/01/Micro-Linux-Education.png?resize=423%2C423">
+# Levinux - A Micro Linux for Education
+<a href="http://mikelev.in/ux/"><img src="http://levinux.com/micro-linux-education.png" alt="Micro Linux for Education" /></a>
 
-# What Is This Project About?
+## What Is This Project About?
 The [micro Linux distribution](http://mikelev.in/ux/) known as Levinux
 (download ~25 MB) is a tiny virtual Linux server that runs from USB or Dropbox
 with a double-click (no install or admin rights required) on Macs, Windows or
