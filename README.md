@@ -25,7 +25,7 @@ forever more brittle as OSes evolve. The QEMU binaries need a fresh compile
 from a talented and trusted source each platform who knows how to bake-in
 dependencies like the curses library (but not SDL). There's also a pruning job
 down to just what's necessary to get the non-graphics version of core.gz, so I
-suspect it will take a lot of qemu config file optimizations.  I've seen the
+suspect it will take a lot of qemu config file customizations. I've seen the
 binaries as small as 1MB on older versions of QEMU, but modern compiles seem to
 come in arount 60MB. Times 3 platforms, and the "keep it small" tennant of
 Levinux goes away. So, anyone up to the challenge? 
