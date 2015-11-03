@@ -13,9 +13,31 @@ Levinux combines with another Github project of mine called Pipulate, so that
 you can see a live Python/Flask app running from http://localhost:8888. There
 will be a minimal (busybox) webserver on http://localhost:8080 after first run.
 But what's going on under the hood to make this all possible? Easy, Levinux is
-the remix of QEMU and Tiny Core Linux that has just been waiting to happen.
+the remix of QEMU and Tiny Core Linux into something perfect for nix newbs.
 
 --------------------------------------------------------------------------------
+# An Appeal To The Github Community
+The main limiting factor in this project is my inability to make the perfect
+QEMU binary for use with Tiny Core Linux for each platform (Windows, Mac and
+GNOME/Unity). I'm currently using the smallest and most highly compatible and
+widely distributed versions pointed to by qemu.org, but they are becoming
+forever more brittle as OSes evolve. The QEMU binaries need a fresh compile
+from a talented and trusted source each platform by someone who knows how to
+bake-in dependencies like the curses library (but not SDL). There's also a
+pruning job down to just what's necessary to get the non-graphics version of
+core.gz, so I suspect it will take a lot of qemu config file optimizations.
+I've seen the binaries as small as 1MB on older versions of QEMU, but modern
+compiles seem to come in arount 60MB. Times 3 platforms, and the "keep it
+small" tennant of Levinux goes away. So, anyone up to the challenge? 
+
+- Selecting the right QEMU version and patches code-base on each platform to
+  start with.
+- Trim the qemu configuration file down to the bare minimum to support the
+  also-minimal vimlinuz Linux kernel distributed with Tiny Core Linux.
+- Rounding up all the dependencies to support text-only mode (curses, ncurses,
+  pdcurses, etc.) and static compile them into the qemu binary.
+- Help with testing on the current and last few versions of each OS.
+
 # Installation Instructions
 
 Download the zip, unarchive it and...
