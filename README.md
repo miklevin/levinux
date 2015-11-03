@@ -16,7 +16,7 @@ But what's going on under the hood to make this all possible? Easy, Levinux is
 the remix of QEMU and Tiny Core Linux into something perfect for nix newbs.
 
 --------------------------------------------------------------------------------
-# An Appeal To The Github Community
+## An Appeal To The Github Community
 The main limiting factor in this project is my inability to make the perfect
 QEMU binary for use with Tiny Core Linux for each platform (Windows, Mac and
 GNOME/Unity). I'm currently using the smallest and most highly compatible and
