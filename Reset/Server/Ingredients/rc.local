@@ -30,26 +30,16 @@ until [ "$selection" = "0" ]; do
     if [ ! -e /tmp/firstboot.txt ]; then
         echo ""
     fi
-#         ...           
-#       x88" !.         
-#      888X   8  .-=x.  
-#     X8888. X" :'.H88L 
-#     ?88888X.  f 4888" 
-#    .x*888888hX   `"`  
-#   d8  `?8888888.      
-#  X88L   `%888888k     
-#  8888x     ?88888>    
-#  888888hx.x! ?888>    
-#  '*8888888"  '888     
-#    `"""""   .88%      
     echo -e "\e[1;37m MAKE YOUR CHOICE:"
-    if [ ! -d /tmp/tcloop/python ]; then
-    echo -e "\e[1;34m 1 - Install Python\e[00m  <-- Currently installs Python & runs my Pipulate Flask app"
+    if [ ! -d /tmp/tcloop/python3 ]; then
+    echo -e "\e[1;34m 1 - Install Python\e[00m  <-- Installs Python 3 and git, enough to get started."
+    elif [ ! -d /tmp/tcloop/vim ]; then
+		echo -e "\e[1;34m 1 - Install vim\e[00m     <-- First frustration, then text-skillz for a lifetime."
     else
-		echo -e "\e[1;34m 1 - Get Pipulating\e[00m  <-- You may now visit \e[1;34mhttp://localhost:8888"
+		echo -e "\e[1;34m 1 - Try the Shell\e[00m   <-- If you haven't already, log in from Terminal with ssh."
     fi
     echo -e "\e[1;31m 2 - Exit to Console\e[00m <-- Better yet, \e[1;31mssh tc@localhost -p 2222\e[00m (\e[1;35mpassword: foo\e[00m)"
-    echo -e "\e[1;32m 3 - Learn more\e[00m      <-- Better yet, visit \e[1;32mhttp://localhost:8080\e[00m on your browser"
+    echo -e "\e[1;32m 3 - Learn more\e[00m      <-- Better yet, visit \e[1;32mhttp://localhost:8080\e[00m in web browser."
     echo -e "\e[1;00m 4 - Shut down\e[00m       <-- Or close window if you don't mind losing unsaved work."
     echo ""
     echo -n " Enter selection: "
@@ -64,8 +54,7 @@ until [ "$selection" = "0" ]; do
             echo " Macs or Linux PCs without an install or Administrator rights, so works great"
             echo -e " with Dropbox and from \e[1;34mUSB drives\e[00m. It is a tiny Linux server on your desktop."
             echo ""
-            echo -e " Why would you even want or need this? Aside from letting you run Pipulate, its"
-            echo -e " companion \e[1;34mblue pill\e[00m Github project on your desktop, I can think of few reasons:"
+            echo -e " Why would you even want or need this? I can think of few reasons:"
             echo ""
             echo -e "\e[1;37m  1. You can learn the tech that's under the hood of pretty much everything."
             echo ""
@@ -80,31 +69,6 @@ until [ "$selection" = "0" ]; do
             echo -e "\e[00m  6. Have a big advantage in school or your career."
             echo ""
             echo -e "\e[1;37m  7. Build a robot army and take over teh world."
-            echo -e "\e[1;32m"
-            read -p "Press Enter to proceed"
-			      echo ""
-            echo -e "\e[1;33m WHAT IS PIPULATE?\e[00m"
-            echo ""
-            echo " Have you ever wondered how many times somepage was tweeted, shared liked or"
-            echo " +1'd? Pipulate super-powers spreadsheets to have such lookup capabilities--just"
-            echo " set up the sheet with the prerequisite function names and question marks, then"
-            echo " pipulate it! Results just flow in before your eyes. This can be done in Google"
-            echo " Docs with a bookmarklet or directly on local CSV files."
-            echo ""
-            echo " Together, me and the red pill crowd on Guthub will grow Pipulate into a full"
-            echo " featured Social Media and SEO software suite to compete with the best if them,"
-            echo " automating countless tedious tasks, helping you improve your audience reach and"
-            echo " participation. You blue pillers can just keep using Pipulate like it ships,"
-            echo " unaware of how easily you could give yourself superpowers."
-            echo ""
-            echo " In other words, you can just USE Pipulate to help you with SEO and Social Media"
-            echo " or you can crack open Levinux and help DEFINE these evolving fields."
-            echo ""
-            echo " Either way is actually fine with me."
-            echo ""
-            echo ""
-            echo ""
-            echo ""
             echo -e "\e[1;32m"
             read -p "Press Enter to proceed"
 			      echo ""
@@ -170,10 +134,12 @@ until [ "$selection" = "0" ]; do
             exit
             ;;
         1 ) clear
-            if [ ! -d /tmp/tcloop/python ]; then
-                sudo -u tc sh /home/tc/Pipulate.sh
+            if [ ! -d /tmp/tcloop/python3 ]; then
+                sudo -u tc sh /home/tc/Python3.sh
+            elif [ ! -d /tmp/tcloop/vim ]; then
+                sudo -u tc sh /home/tc/drinkme.sh
             else
-				echo "Pipulate already installed. Hit ESC for main menu."
+                echo "Hmmmm, what's next?"
             fi
             ;;
         * ) clear

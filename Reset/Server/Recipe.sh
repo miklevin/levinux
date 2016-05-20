@@ -8,7 +8,7 @@ echo "                   | |    / _ \ \ / /| | '_ \| | | \ \/ /"
 echo "                   | |___|  __/\ V / | | | | | |_| |>  <"
 echo "                   |_____|\___| \_/  |_|_| |_|\__,_/_/\_\\"
 echo ""
-echo "                              Beta Version 3.0" 
+echo "                              Beta Version 3.1" 
 echo "            A Portable Linux Server and Programming Environment"
 echo -e "               Built on \e[1;37mTiny Core Linux\e[00;36m and \e[1;37mQEMU\e[00;36m PC Emulator"
 echo "                 Master the short-stack: Python, vim & git"
@@ -21,6 +21,7 @@ echo ""
 
 #Set up an ssh and sftp server (allows you to get in from the host machine)
 
+# These lines would load these programs from the remote repository.
 # sudo -u tc tce-load -wi dropbear > /dev/null
 # sudo -u tc tce-load -wi busybox-httpd > /dev/null
 
@@ -38,8 +39,8 @@ tftp -g -l /home/tc/htdocs/index.html -r /Ingredients/index.html 10.0.2.2
 sudo chown tc /home/tc/htdocs/index.html
 tftp -g -l /home/tc/htdocs/style.css -r /Ingredients/style.css 10.0.2.2
 tftp -g -l /home/tc/htdocs/favicon.ico -r /Ingredients/favicon.ico 10.0.2.2
-tftp -g -l /home/tc/Pipulate.sh -r /Ingredients/Pipulate.sh 10.0.2.2
-sudo sed -i 's/\r//' /home/tc/Pipulate.sh
+tftp -g -l /home/tc/Python3.sh -r /Ingredients/Python3.sh 10.0.2.2
+sudo sed -i 's/\r//' /home/tc/Python3.sh
 tftp -g -l /home/tc/drinkme.sh -r /Ingredients/drinkme.sh 10.0.2.2
 sudo sed -i 's/\r//' /home/tc/drinkme.sh
 sudo chown tc /home/tc/drinkme.sh
