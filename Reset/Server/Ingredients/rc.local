@@ -4,9 +4,12 @@ clear
 selection=
 until [ "$selection" = "0" ]; do
     if [ -e /tmp/firstboot.txt ]; then
-        echo -e "\e[1;33m Welcome, you sad little wannabe poser. You couldn't hack your way into this"
-        echo " tiny Linux server running right on your desktop even if I clearly wrote the"
-        echo " instructions right below. And don't dream to surfing to http://localhost:8080"
+        echo -e "\e[1;33mWelcome to Levinux, the tiny Linux virtual server built from Tiny Core and QEMU"
+        echo "that invites you in to crack it open, break it, and reset it to your heart's"
+        echo "content, because *nix makes you powerful, practice makes perfect, & old's kool."
+        #echo -e "\e[1;33m Welcome, you sad little wannabe poser. You couldn't hack your way into this"
+        #echo " tiny Linux server running right on your desktop even if I clearly wrote the"
+        #echo " instructions right below. And don't dream to surfing to http://localhost:8080"
         echo ""
     else
         echo ""
@@ -14,33 +17,33 @@ until [ "$selection" = "0" ]; do
         echo ""
     fi
     echo -e "\e[1;34m                                                       \e[0;37m...                " 
-    echo -e "\e[1;37m            Levinux: Your Tiny Computing /home       \e[0;37mx88\" !.            "
+    echo -e "\e[1;37m            Levinux: Your Tiny Nomadic *nix /home    \e[0;37mx88\" !.            "
     echo -e "\e[1;34m            ____        _   _                       \e[0;37m888X   8  .-=x.      "
     echo -e "\e[1;34m           |  _ \\ _   _| |_| |__   ___  _ __        \e[0;37mX8888. X\" :'.H88L   "
     echo -e "\e[1;34m           | |_) | | | | __| '_ \\ / _ \\| '_ \\       \e[0;37m?88888X.  f 4888\" "
     echo -e "\e[1;34m           |  __/| |_| | |_| | | | (_) | | | |    \e[0;37m.x*888888hX   \`\"\`   "
     echo -e "\e[1;34m           |_|    \\__, |\\__|_| |_|\\___/|_| |_|   \e[0;37md8  \`?8888888.     "
-    echo -e "\e[1;31m           | |    \e[1;34m|___/\e[1;31m   _(_)_ __  _   ___  __ \e[0;37mX88L   \`%888888k        "
-    echo -e "\e[1;31m           | |   / _ \\ \\ / / | '_ \\| | | \\ \\/ / \e[0;37m8888x     ?88888>   "
-    echo -e "\e[1;31m           | |__|  __/\\ V /| | | | | |_| |>  <  \e[0;37m888888hx.x! ?888>       "
-    echo -e "\e[1;31m           |_____\\___| \\_/ |_|_| |_|\\__,_/_/\\_\\  \e[0;37m'*8888888\"  '888   "
-    echo -e "\e[1;31m                                                   \e[0;37m\`\"\"\"\"\"   .88%  (\e[1;37mLevinux.com\e[00m)"
+    echo -e "\e[1;36m           | |    \e[1;34m|___/\e[1;36m   _(_)_ __  _   ___  __ \e[0;37mX88L   \`%888888k        "
+    echo -e "\e[1;36m           | |   / _ \\ \\ / / | '_ \\| | | \\ \\/ / \e[0;37m8888x     ?88888>   "
+    echo -e "\e[1;36m           | |__|  __/\\ V /| | | | | |_| |>  <  \e[0;37m888888hx.x! ?888>       "
+    echo -e "\e[1;36m           |_____\\___| \\_/ |_|_| |_|\\__,_/_/\\_\\  \e[0;37m'*8888888\"  '888   "
+    echo -e "\e[1;36m                                                   \e[0;37m\`\"\"\"\"\"   .88%  (\e[1;37mLevinux.com\e[00m)"
     echo ""
     echo ""
     if [ ! -e /tmp/firstboot.txt ]; then
         echo ""
     fi
-    echo -e "\e[1;37m MAKE YOUR CHOICE:"
+    echo -e "\e[00m MAKE YOUR CHOICE:"
     if [ ! -d /tmp/tcloop/python3 ]; then
-    echo -e "\e[1;34m 1 - Install Python\e[00m  <-- Installs Python 3 and git, enough to get started."
+      echo -e "\e[1;34m 1 - Install Python\e[00m  <-- Installs Python 3 and git, enough to get started."
     elif [ ! -d /tmp/tcloop/vim ]; then
-		echo -e "\e[1;34m 1 - Install vim\e[00m     <-- First frustration, then text-skillz for a lifetime."
+      echo -e "\e[1;34m 1 - Install vim\e[00m     <-- First frustration, then text-skillz for a lifetime."
     else
-		echo -e "\e[1;34m 1 - Try the Shell\e[00m   <-- If you haven't already, log in from Terminal with ssh."
+      echo -e "\e[1;34m 1 - Try the Shell\e[00m   <-- If you haven't already, log in from Terminal with ssh."
     fi
-    echo -e "\e[1;31m 2 - Exit to Console\e[00m <-- Better yet, \e[1;31mssh tc@localhost -p 2222\e[00m (\e[1;35mpassword: foo\e[00m)"
-    echo -e "\e[1;32m 3 - Learn more\e[00m      <-- Better yet, visit \e[1;32mhttp://localhost:8080\e[00m in web browser."
-    echo -e "\e[1;00m 4 - Shut down\e[00m       <-- Or close window if you don't mind losing unsaved work."
+    echo -e "\e[1;36m 2 - Exit to Console\e[00m <-- Better yet, \e[1;36mssh tc@localhost -p 2222\e[00m (\e[1;35mpassword: foo\e[00m)"
+    echo -e "\e[1;37m 3 - Learn more\e[00m      <-- What's going on here? Visit \e[1;37mhttp://localhost:8080\e[00m"
+    echo -e "\e[1;31m 4 - Shut down\e[00m       <-- Or \e[1;31mclose window\e[00m, if there's no unsaved work here."
     echo ""
     echo -n " Enter selection: "
     read selection
