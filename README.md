@@ -2,18 +2,34 @@
 <a href="http://mikelev.in/ux/"><img src="http://levinux.com/micro-linux-education.png" alt="Micro Linux for Education" /></a>
 
 ## What Is This Project About?
+
 The [micro Linux distribution](http://mikelev.in/ux/) known as Levinux
 (download ~25 MB) is a tiny virtual Linux server that runs from USB or Dropbox
 with a double-click (no install or admin rights required) on Macs, Windows or
 Linux PCs—making it the perfect learning environment and launching-off point
 for other projects, requiring just enough operating system and a quick
-introduction to generic nix systems.
+introduction to generic nix systems. Levinux is the remix of QEMU and Tiny Core
+Linux into something perfect for nix newbs.
 
-Levinux combines with another Github project of mine called Pipulate, so that
-you can see a live Python/Flask app running from http://localhost:8888. There
-will be a minimal (busybox) webserver on http://localhost:8080 after first run.
-But what's going on under the hood to make this all possible? Easy, Levinux is
-the remix of QEMU and Tiny Core Linux into something perfect for nix newbs.
+## Who is Mike Levin?
+
+Hello World! I'm Mike Levin, an SEO in New York City. I'm an Amiga Computer fan
+from long ago, with a once bitten, twice shy mentality towards Tech. That's
+made me seek out the most timeless, while still love-worthy, fundamentals worth
+learning, and the answer is Unix-like platforms through terminals. That
+realization made me research the ultimately portable platform, found none, and
+so had to make my own -- albeit something of a remix and a hack. So, I made
+Levinux as a side-project, and was surprised to discover it's wide-spread
+appeal, because at some point in everyone's technical career they research
+lightweight portable virtual machines that don't require admin rights and runs
+on a diversity of host computers types. Please read on, but feel free to learn
+more about me:
+
+- [Subscribe to my YouTube Channel](https://www.youtube.com/mikelevin)
+- [Follow me on Twitter](https://twitter.com/miklevin)
+- [Connect on LinkedIn](https://www.linkedin.com/in/miklevin)
+- [My SEO Daily Work Journal](http://mikelevinseo.com)
+- [My WordPress Site](http://mikelev.in/)
 
 --------------------------------------------------------------------------------
 ## An Appeal To The Github Community
