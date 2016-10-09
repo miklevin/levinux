@@ -135,7 +135,7 @@ until [ "$selection" = "0" ]; do
             exit
             ;;
         1 ) clear
-            if [ ! -d /tmp/tcloop/python3 ]; then
+            if [ ! -d /tmp/tcloop/python3.5 ]; then
                 sudo -u tc sh /home/tc/Python3.sh
             elif [ ! -d /tmp/tcloop/vim ]; then
                 sudo -u tc sh /home/tc/drinkme.sh
