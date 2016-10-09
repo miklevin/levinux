@@ -31,7 +31,7 @@ until [ "$selection" = "0" ]; do
         echo ""
     fi
     echo -e "\e[00m MAKE YOUR CHOICE:"
-    if [ ! -d /tmp/tcloop/python3 ]; then
+    if [ ! -d /tmp/tcloop/python3.5 ]; then
       echo -e "\e[1;34m 1 - Install Python\e[00m  <-- Installs Python 3 and git, enough to get started."
     elif [ ! -d /tmp/tcloop/vim ]; then
       echo -e "\e[1;34m 1 - Install vim\e[00m     <-- First frustration, then text-skillz for a lifetime."
