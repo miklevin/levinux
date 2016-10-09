@@ -34,7 +34,7 @@ read selection
             # everything necessary to make it a development platform
             echo -e "\e[1;37mInstalling Python (and all its many, many dependencies)...\e[0;37m"
             # tce-load -wi python > /dev/null
-            tce-load -wi python3-dev
+            tce-load -wi python3.5-dev
             echo -e "\e[1;37mGetting & installing the old Python Setuptools...\e[0;37m"
             cd /home/tc/
             wget https://bootstrap.pypa.io/ez_setup.py
