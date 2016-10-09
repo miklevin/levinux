@@ -4,12 +4,16 @@
 ## What Is This Project About?
 
 The [micro Linux distribution](http://mikelev.in/ux/) known as Levinux
-(download ~25 MB) is a tiny virtual Linux server that runs from USB or Dropbox
+(download ~20 MB) is a tiny virtual Linux server that runs from USB or Dropbox
 with a double-click (no install or admin rights required) on Macs, Windows or
 Linux PCs—making it the perfect learning environment and launching-off point
 for other projects, requiring just enough operating system and a quick
 introduction to generic nix systems. Levinux is the remix of QEMU and Tiny Core
-Linux into something perfect for nix newbs.
+Linux into something perfect for nix newbs. This is perhaps the only place on
+the Internet someone will recommend to actually try this just to have the
+experience (***but only on Levinux / not on your HOST system!***):
+
+    sudo rm -rf /
 
 ## Who is Mike Levin?
 
@@ -58,9 +62,9 @@ Levinux goes away. So, anyone up to the challenge?
 
 Download the zip, unarchive it and...
 
-1. If on Windows, double-click Pipulate.vbs.
-2. If on Mac OSX, double-click Pipulate.
-3. If on Linux, double-click Pipulate.sh and select Run in Terminal.
+1. If on Windows, double-click WindowsLevinux.vbs.
+2. If on Mac OSX, double-click Levinux.
+3. If on Linux, double-click LinuxLevinux.sh and select Run in Terminal.
 
 ## Machine-specific issues
 
