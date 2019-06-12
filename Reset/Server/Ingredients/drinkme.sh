@@ -41,10 +41,10 @@ read selection
             echo -e "                   \_/ |_|_| |_| |_(_) (_) (_) <_<_/-<__|      I'm sorry."
             echo -e "\e[00m"
             tce-load -wi vim > /dev/null
-            rm /usr/local/share/vim/vim72/syntax/python.vim
-            tftp -g -l /usr/local/share/vim/vim72/syntax/pytho.vim -r /Ingredients/python.vim 10.0.2.2
-            sudo tr -d '\r' </usr/local/share/vim/vim72/syntax/pytho.vim >/usr/local/share/vim/vim72/syntax/python.vim
-            sudo rm /usr/local/share/vim/vim72/syntax/pytho.vim
+            #rm /usr/local/share/vim/vim72/syntax/python.vim
+            #tftp -g -l /usr/local/share/vim/vim72/syntax/pytho.vim -r /Ingredients/python.vim 10.0.2.2
+            #sudo tr -d '\r' </usr/local/share/vim/vim72/syntax/pytho.vim >/usr/local/share/vim/vim72/syntax/python.vim
+            #sudo rm /usr/local/share/vim/vim72/syntax/pytho.vim
             tftp -g -l /home/tc/.vimrc -r /Ingredients/.vimrc 10.0.2.2
             echo "usr/local/share/vim/vim72/syntax/python.vim" >> /opt/.filetool.lst
             sudo filetool.sh -b
