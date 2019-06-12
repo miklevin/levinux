@@ -47,7 +47,6 @@ read selection
             sudo rm /usr/local/share/vim/vim72/syntax/pytho.vim
             tftp -g -l /home/tc/.vimrc -r /Ingredients/.vimrc 10.0.2.2
             echo "usr/local/share/vim/vim72/syntax/python.vim" >> /opt/.filetool.lst
-            echo "usr/local/share/vim/vim72/colors/blackboard.vim" >> /opt/.filetool.lst
             sudo filetool.sh -b
             clear
             echo "vim installed. For the next chapter of Levinux, visit: http://levinux.com"
