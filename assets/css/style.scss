@@ -1,0 +1,30 @@
+---
+---
+
+@import 'jekyll-theme-hacker';
+
+.spacer {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.post-nav {
+    display: flex;
+    justify-content: flex-end;
+    // justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.post-nav-prev {
+    margin-right: auto;
+    // text-align: left;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.post-nav-next {
+    text-align: right;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
