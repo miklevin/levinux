@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<div class="spacer">
+  <div class="post-nav">
+    <div class="post-nav-prev">
+      {% if page.previous.url %}
+      &larr;&nbsp;<a href="{{page.previous.url}}">{{page.previous.title}}</a>
+      {% endif %}
+    </div>
+    <div class="post-nav-next">
+      {% if page.next.url %}
+      <a href="{{page.next.url}}">{{page.next.title}}</a>&nbsp;&rarr;
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<h1>{{ page.title }}</h1>
+<p class="view">by {{ page.author | default: site.author }}</p>
+<small>{{ page.date | date: "%-d %B %Y" }}</small>
+
+{{content}}
+
+<div class="spacer">
+  <div class="post-nav">
+    <div class="post-nav-prev">
+      {% if page.previous.url %}
+      &larr;&nbsp;<a href="{{page.previous.url}}">{{page.previous.title}}</a>
+      {% endif %}
+    </div>
+    <div class="post-nav-next">
+      {% if page.next.url %}
+      <a href="{{page.next.url}}">{{page.next.title}}</a>&nbsp;&rarr;
+      {% endif %}
+    </div>
+  </div>
+</div>
