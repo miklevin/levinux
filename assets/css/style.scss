@@ -3,6 +3,13 @@
 
 @import 'jekyll-theme-hacker';
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
 nav {
     text-align: center;
     font-size: 1.5em;
