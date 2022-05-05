@@ -7,17 +7,7 @@
 
 }
 ul li {
-    list-style: none;
-    list-style-image: none;
-    padding: 0px;
-}
-
-li:before {
-    content: '\2192';
-    margin: 0 1em;
-    color: lightgreen;
-    font-weight: bolder;
-    list-style-image: none;
+    list-style-image: url(url(/assets/images-green-arrow.png););
 }
 
 img {
