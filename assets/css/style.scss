@@ -3,6 +3,20 @@
 
 @import 'jekyll-theme-hacker';
 
+//&rarr;
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+li:before {
+    content: '\2192';
+    margin: 0 1em;
+    color: green;
+    font-weight: bolder;
+}
+
 img {
   display: block;
   margin-left: auto;
