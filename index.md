@@ -9,5 +9,5 @@ description: Levinux is a A Tiny Virtual Linux for Education
 |_____\___| \_/ |_|_| |_|\__,_/_/\_(_)___\___/|_| |_| |_|
                                                          
 </header>                                           
-# Welcome to {{ site.apex }}
+# Welcome to {{ site.tagline }}
 
