@@ -5,10 +5,11 @@
 
 //&rarr;
 
-ul {
+}
+ul li {
     list-style: none;
-    padding: 0px;
     list-style-image: initial;
+    padding: 0px;
 }
 
 li:before {
