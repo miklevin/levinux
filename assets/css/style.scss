@@ -10,6 +10,14 @@ img {
   width: 100%;
 }
 
+header {
+    display: block;
+    unicode-bidi: embed;
+    font-family: monospace;
+    white-space: pre;
+}
+
+
 nav {
     text-align: center;
     font-size: 1.5em;
