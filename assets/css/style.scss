@@ -60,3 +60,17 @@ footer {
     padding-bottom: .5em;
 }
 
+.rotate {
+    width: 85%;
+    object-fit: cover;
+    animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
