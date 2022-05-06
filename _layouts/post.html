@@ -8,7 +8,11 @@ layout: default
       &larr;&nbsp;<a href="{{page.previous.url}}">{{page.previous.title}}</a>
       {% endif %}
     </div>
-    <div class="post-nav-next">{% if page.next.url %}<a href="{{page.next.url}}">{{page.next.title}}<img src="/assets/images/green-arrow.png" width="24" height="10" align="right"/></a>{% endif %}</div>
+    <div class="post-nav-next">
+      {% if page.next.url %}
+      <a href="{{page.next.url}}">{{page.next.title}}</a>&nbsp;&rarr;
+      {% endif %}
+    </div>
   </div>
 </div>
 
@@ -27,7 +31,7 @@ layout: default
     </div>
     <div class="post-nav-next">
       {% if page.next.url %}
-      <a href="{{page.next.url}}">{{page.next.title}}</a>&nbsp;<img src="/assets/images/green-arrow.png" />
+      <a href="{{page.next.url}}">{{page.next.title}}</a>&nbsp;&rarr;
       {% endif %}
     </div>
   </div>
