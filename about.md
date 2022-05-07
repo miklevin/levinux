@@ -4,5 +4,6 @@ permalink: /about/
 ---
 # About The {{ site.title }} Website
 
-- [Blog](/blog/)
+- [{{ site.tagline }} Blog](/blog/)
+- [{{ site.tagline }} RSS Feed](/feed.xml)
 - [1-Page Blog](/journal/)
