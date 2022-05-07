@@ -1,11 +1,11 @@
 ---
 layout: default
 author: Mike Levin
-title: "Levinux.com Blog"
+title: "blog_title"
 slug: blog
 permalink: /blog/
 ---
-# { site.title } Blog
+# Levinux.com Blog
 
 
 
