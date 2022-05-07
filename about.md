@@ -5,5 +5,5 @@ permalink: /about/
 # About The {{ site.title }} Website
 
 - [{{ site.tagline }} Blog](/blog/)
-- [{{ site.tagline }} RSS Feed](/feed.xml)
-- [1-Page Blog](/journal/)
+- [{{ site.tagline }} Blog RSS Feed](/feed.xml)
+- [{{ site.tagline }} 1-Page Blog](/journal/)
