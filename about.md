@@ -2,7 +2,7 @@
 description: About {{ site.apex }}
 permalink: /about/
 ---
-# About The {{ site.title }} Website
+# About The {{ site.tagline }} Website
 
 - [{{ site.tagline }} Blog](/blog/)
 - [{{ site.tagline }} Blog RSS Feed](/feed.xml)
