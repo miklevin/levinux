@@ -8,4 +8,4 @@ permalink: /blog/
 
 # Welcome to The {{ site.tagline }} Blog
 
-- 01/01/1970 [Post 1](/blog/post-1/)
+- [Post 1](/blog/post-1/) 01/01/1970
