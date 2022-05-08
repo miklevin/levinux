@@ -6,6 +6,6 @@ slug: blog
 permalink: /blog/
 ---
 
-# {{ site.tagline }}
+# Welcome to The {{ site.tagline }} Blog
 
 - [Post 1](/blog/post-1/) 1970-01-01
