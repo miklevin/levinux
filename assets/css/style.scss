@@ -10,6 +10,10 @@ body {
     -webkit-font-smoothing: antialiased;
     margin: 1%;
 }
+h1 {
+    font-weight: bold;
+    font-size: 2em;
+}
 ul li {
     list-style-image: url(/assets/images/green-arrow.png);
 }
