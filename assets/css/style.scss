@@ -9,16 +9,16 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     margin: 6%;
-},
+}
 ul li {
     list-style-image: url(/assets/images/green-arrow.png);
-},
+}
 img {
     vertical-align: middle;
     display: block;
     margin-left: auto;
     margin-right: auto;
-},
+}
 header {
     width: 100%;
     font-family: monospace;
@@ -27,36 +27,36 @@ header {
     background: black;
     border-bottom: initial;
     padding: initial;
-},
+}
 nav {
     text-align: center;
     font-size: 1.3em;
-},
+}
 footer {
     text-align: center;
     font-size: .75em;
-},
+}
 .spacer {
     padding-top: .5em;
     padding-bottom: .5em;
-},
+}
 .post-nav {
     display: flex;
     justify-content: flex-end;
     // justify-content: space-between;
     flex-wrap: wrap;
-},
+}
 .post-nav-prev {
     margin-right: auto;
     // text-align: left;
     padding-top: .5em;
     padding-bottom: .5em;
-},
+}
 .post-nav-next {
     text-align: right;
     padding-top: .5em;
     padding-bottom: .5em;
-},
+}
 .rotate {
     top: 50%;
     left: 50%;
@@ -64,7 +64,7 @@ footer {
     width: 75%;
     animation: rotation 8s infinite linear;
     object-fit: cover;
-},
+}
 @keyframes rotation {
     from {
         transform: rotate(0deg);
