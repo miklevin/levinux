@@ -1,5 +1,6 @@
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 theme: jekyll-theme-hacker
 author: Mike Levin
 permalink: /:slug/
